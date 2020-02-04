@@ -8,20 +8,20 @@
     tools:context=".create_doctor">
 
     <Button
-        android:id="@+id/btn_createacc2"
+        android:id="@+id/btnCreateDoctorAcc"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="407dp"
         android:layout_height="0dp"
         android:text="Create Account"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cancel2"
+        app:layout_constraintBottom_toTopOf="@+id/btnDocCancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_cancel2"
+        android:id="@+id/btnDocCancel"
         android:layout_width="409dp"
         android:layout_height="52dp"
         android:layout_marginBottom="36dp"
@@ -138,7 +138,9 @@
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginTop="20dp"
-        android:text="*****"
+        android:hint="*****"
+        android:inputType="textPassword"
+        android:text="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_createmail" />
 

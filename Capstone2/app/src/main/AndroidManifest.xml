@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PasswordReminder"></activity>
-        <activity android:name=".AddPatientForm" />
+        <activity android:name=".PasswordReminder" />
         <activity android:name=".View_doctor" />
         <activity android:name=".home_doctor" />
         <activity android:name=".home_school" />
@@ -20,14 +19,24 @@
         <activity android:name=".create_school" />
         <activity android:name=".create_personal" />
         <activity android:name=".Login" />
-        <activity android:name=".splash" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DoctorUpdateActivity" />
+        <activity android:name=".VaccineInfoActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".DoctorProfileActivity" />
+        <activity android:name=".PersonalProfileActivity" />
+        <activity android:name=".SchoolProfileActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AddMemberForm" />
+        <activity android:name=".AddPatientForm" />
+        <activity android:name=".AddStudentForm" />
+        <activity android:name=".ViewRecordActivity" />
     </application>
 
 </manifest>

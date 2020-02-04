@@ -7,6 +7,7 @@
     android:background="#FCCC41">
 
     <EditText
+        android:id="@+id/txtLoginTitle"
         android:layout_width="407dp"
         android:layout_height="73dp"
         android:layout_marginTop="28dp"
@@ -25,16 +26,16 @@
         app:layout_constraintVertical_bias="0.148" />
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btnLogin"
         android:layout_width="231dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="50dp"
         android:background="@android:color/holo_red_dark"
         android:text="Login"
         android:textColor="@android:color/white"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txt_forgotpass"
+        app:layout_constraintBottom_toTopOf="@+id/btnForgotPass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent" />
@@ -57,7 +58,7 @@
         android:id="@+id/txt_username"
         android:layout_width="347dp"
         android:layout_height="62dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="abc@email.com"
         android:inputType="textEmailAddress"
@@ -65,25 +66,26 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/txt_password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoginTitle" />
 
     <EditText
         android:id="@+id/txt_password"
         android:layout_width="336dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="64dp"
         android:ems="10"
         android:hint="password: *****"
         android:inputType="textPassword"
         android:textColorHint="#5C0F83"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/txt_forgotpass"
+        android:id="@+id/btnForgotPass"
         android:layout_width="213dp"
         android:layout_height="69dp"
         android:layout_marginBottom="40dp"
@@ -96,5 +98,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtIncorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

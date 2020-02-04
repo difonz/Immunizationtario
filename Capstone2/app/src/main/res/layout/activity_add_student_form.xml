@@ -5,25 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E6F5F7"
-    tools:context=".add_student_form">
+    tools:context=".AddStudentForm">
 
 
     <Button
-        android:id="@+id/button31"
-        android:layout_width="100dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#03178B"
-        android:text="View"
-        android:textColor="#FAF6F6"
-        android:textSize="18sp"
+        android:id="@+id/btnSAddCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#00BCD4"
+        android:text="@android:string/cancel"
+        android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button37"
-        app:layout_constraintStart_toEndOf="@+id/button36"
-        app:layout_constraintTop_toBottomOf="@+id/editText19" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button30" />
 
     <EditText
         android:id="@+id/editText22"
@@ -41,50 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText21" />
 
-    <Button
-        android:id="@+id/button40"
-        android:layout_width="100dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:background="#03178B"
-        android:text="Logout"
-        android:textColor="#FAF6F6"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button39"
-        app:layout_constraintTop_toBottomOf="@+id/editText19" />
-
-    <Button
-        android:id="@+id/button36"
-        android:layout_width="100dp"
-        android:layout_height="68dp"
-        android:background="#03178B"
-        android:text="Home"
-        android:textColor="#FAF6F6"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText19" />
-
-
-    <Button
-        android:id="@+id/button37"
-        android:layout_width="100dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:background="#03178B"
-        android:text="Profile"
-        android:textColor="#FAF6F6"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/button40"
-        app:layout_constraintStart_toEndOf="@+id/button31"
-        app:layout_constraintTop_toBottomOf="@+id/editText19" />
 
     <EditText
         android:id="@+id/editText19"
@@ -107,14 +60,14 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="32dp"
         android:text="Add New Student"
         android:textColor="#131213"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button37" />
+        app:layout_constraintTop_toBottomOf="@+id/editText19" />
 
     <EditText
         android:id="@+id/editText21"
@@ -149,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText22" />
 
     <Button
-        android:id="@+id/button28"
+        android:id="@+id/btnSAddADD"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="37dp"
@@ -160,25 +113,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <Button
-        android:id="@+id/button29"
-        android:layout_width="180dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginEnd="114dp"
-        android:layout_marginRight="114dp"
-        android:layout_marginBottom="32dp"
-        android:background="#E46791"
-        android:text="Back to Home"
-        android:textColor="#F3F0F0"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button30" />
 
     <TextView
         android:id="@+id/textView7"
@@ -225,7 +159,7 @@
         android:background="@drawable/add_school"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button28" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSAddADD" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

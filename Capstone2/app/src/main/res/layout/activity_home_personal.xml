@@ -8,37 +8,38 @@
     tools:context=".home_personal">
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/btnPHomeAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="24dp"
         android:background="#27B32C"
         android:text="Add New Member"
         android:textColor="#FAF7F7"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button15"
+        app:layout_constraintBottom_toTopOf="@+id/btnPHomeRecords"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button17" />
 
     <Button
-        android:id="@+id/button15"
+        android:id="@+id/btnPHomeRecords"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="24dp"
         android:background="#27B32C"
         android:text="Family Member's Record"
         android:textColor="#FAF7F7"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button16"
+        app:layout_constraintBottom_toTopOf="@+id/btnPHomeInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/btnPHomeInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="42dp"
@@ -53,7 +54,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnPHomeProfile"
         android:layout_width="81dp"
         android:layout_height="72dp"
         android:layout_marginStart="2dp"
@@ -62,7 +63,7 @@
         android:text="Profile"
         android:textColor="#FAF6F6"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintStart_toEndOf="@+id/btnPHome"
         app:layout_constraintTop_toBottomOf="@+id/editText15" />
 
     <EditText
@@ -94,10 +95,10 @@
         android:background="#A0E2A3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPHomeProfile" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnPHome"
         android:layout_width="81dp"
         android:layout_height="72dp"
         android:background="#158B18"
@@ -108,20 +109,20 @@
         app:layout_constraintTop_toBottomOf="@+id/editText15" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnPHomeCalendar"
         android:layout_width="81dp"
         android:layout_height="72dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:background="#158B18"
-        android:text="Calender"
+        android:text="Calendar"
         android:textColor="#FAF6F6"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintStart_toEndOf="@+id/btnPHomeMap"
         app:layout_constraintTop_toBottomOf="@+id/editText15" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnPHomeMap"
         android:layout_width="81dp"
         android:layout_height="72dp"
         android:layout_marginStart="2dp"
@@ -130,11 +131,11 @@
         android:text="Map"
         android:textColor="#FAF6F6"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button6"
+        app:layout_constraintStart_toEndOf="@+id/btnPHomeProfile"
         app:layout_constraintTop_toBottomOf="@+id/editText15" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnPHomeLogout"
         android:layout_width="81dp"
         android:layout_height="72dp"
         android:layout_marginStart="2dp"
@@ -143,7 +144,7 @@
         android:text="Logout"
         android:textColor="#FAF6F6"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintStart_toEndOf="@+id/btnPHomeCalendar"
         app:layout_constraintTop_toBottomOf="@+id/editText15" />
 
     <Button
@@ -157,7 +158,7 @@
         android:layout_marginRight="70dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/personal_h"
-        app:layout_constraintBottom_toTopOf="@+id/button14"
+        app:layout_constraintBottom_toTopOf="@+id/btnPHomeAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />

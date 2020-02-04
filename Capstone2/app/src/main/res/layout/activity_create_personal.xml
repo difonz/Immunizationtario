@@ -23,18 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_cancel"
-        android:layout_width="409dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="50dp"
-        android:text="Cancel"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/editText3"
         android:layout_width="137dp"
@@ -121,20 +109,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_dob" />
 
-    <Button
-        android:id="@+id/btn_createacc"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="407dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:text="Create Account"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
         android:id="@+id/txt_dob"
         android:layout_width="212dp"
@@ -168,6 +142,8 @@
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:password="true"
         android:text="*****"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_createmail" />
@@ -231,5 +207,26 @@
         app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <Button
+        android:id="@+id/btnCreatePersonal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="32dp"
+        android:text="Create Account"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_createpass" />
+
+    <Button
+        android:id="@+id/btnPersonalCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@android:string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="651dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

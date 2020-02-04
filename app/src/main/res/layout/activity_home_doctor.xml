@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1ECFA"
+    tools:context=".home_doctor">
+
+    <Button
+        android:id="@+id/btnDocLogout"
+        android:layout_width="80dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:background="#9C27B0"
+        android:text="Logout"
+        android:textColor="#FAF6F6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button39"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnDocProfile"
+        android:layout_width="85dp"
+        android:layout_height="72dp"
+        android:background="#9C27B0"
+        android:text="Profile"
+        android:textColor="#FAF6F6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/button38"
+        app:layout_constraintStart_toEndOf="@+id/btnDocHome"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnDocUpdate"
+        android:layout_width="85dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="#9C27B0"
+        android:text="Update"
+        android:textColor="#FAF6F6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/button39"
+        app:layout_constraintStart_toEndOf="@+id/btnDocProfile"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnDocView"
+        android:layout_width="80dp"
+        android:layout_height="72dp"
+        android:background="#9C27B0"
+        android:text="View"
+        android:textColor="#FAF6F6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/button40"
+        app:layout_constraintStart_toEndOf="@+id/btnDocUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnDocHome"
+        android:layout_width="81dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:background="#9C27B0"
+        android:text="Home"
+        android:textColor="#FAF6F6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/button37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <EditText
+        android:id="@+id/editText15"
+        android:layout_width="416dp"
+        android:layout_height="73dp"
+        android:background="#F1E786"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:inputType="textPersonName"
+        android:text="  IMMUNIZATIONTARIO"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView2"
+        android:layout_width="362dp"
+        android:layout_height="47dp"
+        android:background="#E6B5EE"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="155dp" />
+
+    <Button
+        android:id="@+id/btnDHomeInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="#A243B3"
+        android:text="Vaccines' Information"
+        android:textColor="#F7F3F3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDHomeAdd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="#A243B3"
+        android:text="Add New Patient"
+        android:textColor="#F7F3F3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnDHomeRecords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDHomeRecords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="#A243B3"
+        android:text="My Patient's Record"
+        android:textColor="#F7F3F3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnDHomeInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button19"
+        android:layout_width="278dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/doctor_h"
+        app:layout_constraintBottom_toTopOf="@+id/btnDHomeAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

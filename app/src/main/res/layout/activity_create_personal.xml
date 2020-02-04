@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F8E8">
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="416dp"
+        android:layout_height="73dp"
+        android:background="#F1E786"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:inputType="textPersonName"
+        android:text="  IMMUNIZATIONTARIO"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:background="#C5E0C7"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Full Name :"
+        android:textColor="#02105F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:background="#C5E0C7"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="OHIP Card No:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#02105F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:background="#C5E0C7"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email: "
+        android:textColor="#02105F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+
+    <EditText
+        android:id="@+id/txt_createmail"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:ems="10"
+        android:hint="abc@email.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_phone" />
+
+    <EditText
+        android:id="@+id/txt_phone"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="123-123-1234"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_healthno" />
+
+    <TextView
+        android:id="@+id/txt_healthno"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:hint="111-111-111-1111-AA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_dob" />
+
+    <EditText
+        android:id="@+id/txt_dob"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="DOB"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_fullname" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:background="#C5E0C7"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Date of Birth: "
+        android:textColor="#02105F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <TextView
+        android:id="@+id/txt_createpass"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:password="true"
+        android:text="*****"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_createmail" />
+
+    <EditText
+        android:id="@+id/editText18"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:background="#C5E0C7"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="New Password: "
+        android:textColor="#02105F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="20dp"
+        android:background="#C5E0C7"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Phone: "
+        android:textColor="#02105F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
+    <TextView
+        android:id="@+id/txt_fullname"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:hint="First - Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+    <EditText
+        android:id="@+id/editText11"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#096B0B"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="          PERSONAL USER"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <Button
+        android:id="@+id/btnCreatePersonal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="32dp"
+        android:text="Create Account"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_createpass" />
+
+    <Button
+        android:id="@+id/btnPersonalCancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@android:string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="651dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

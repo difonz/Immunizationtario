@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6F5F7"
+    tools:context=".home_school">
+
+    <Button
+        android:id="@+id/btnSHome"
+        android:layout_width="100dp"
+        android:layout_height="68dp"
+        android:background="#03178B"
+        android:text="Home"
+        android:textColor="#FAF6F6"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnSHomeRecords"
+        android:layout_width="100dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:background="#03178B"
+        android:text="View"
+        android:textColor="#FAF6F6"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnSHomeLogout"
+        app:layout_constraintStart_toEndOf="@+id/btnPHome"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnSHomeProfile"
+        android:layout_width="100dp"
+        android:layout_height="68dp"
+        android:background="#03178B"
+        android:text="Profile"
+        android:textColor="#FAF6F6"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnSHomeRecords"
+        app:layout_constraintStart_toEndOf="@+id/btnSHome"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnSHomeLogout"
+        android:layout_width="100dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:background="#03178B"
+        android:text="Logout"
+        android:textColor="#FAF6F6"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPHomeProfile"
+        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+
+    <Button
+        android:id="@+id/btnSHomeAdd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="#6275DD"
+        android:text="Add New Student"
+        android:textColor="#F7F4F4"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSHomeViewStudents"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSHomeViewStudents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="#6275DD"
+        android:text="My Student's Record"
+        android:textColor="#F7F4F4"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSHomeInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSHomeInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:background="#6275DD"
+        android:text="Vaccines' Information"
+        android:textColor="#F7F4F4"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText15"
+        android:layout_width="416dp"
+        android:layout_height="73dp"
+        android:background="#F1E786"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:inputType="textPersonName"
+        android:text="  IMMUNIZATIONTARIO"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView3"
+        android:layout_width="362dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#93A1F3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="155dp" />
+
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="240dp"
+        android:layout_height="216dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/school_h"
+        app:layout_constraintBottom_toTopOf="@+id/btnSHomeAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,14 +12,17 @@ public class PersonalAccount {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name="id")
-    private int id;
+    private long id;
 
     @NonNull
     @ColumnInfo(name="name")
     private String name;
 
-    @ColumnInfo(name="address")
-    private String address;
+    @ColumnInfo(name="email")
+    private String email;
+
+    @ColumnInfo(name="password")
+    private String password;
 
     @ColumnInfo(name="phone")
     private String phone;
@@ -40,9 +43,10 @@ public class PersonalAccount {
     private int schoolID;
 
 
-    public PersonalAccount(String n, String a, String p, String d, String hc) {
+    public PersonalAccount(String n, String e, String pass, String p, String d, String hc) {
         name = n;
-        address = a;
+        email = e;
+        password = pass;
         phone = p;
         dob = d;
         healthCard = hc;
@@ -50,7 +54,7 @@ public class PersonalAccount {
         schoolID = 0; // the doctor/school is the entity that must initiate the foreign key association
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -59,8 +63,8 @@ public class PersonalAccount {
         return this.name;
     }
 
-    public String getAddress() {
-        return this.address;
+    public String getEmail() {
+        return this.email;
     }
 
     public String getPhone() {
@@ -87,8 +91,8 @@ public class PersonalAccount {
         this.name = newName;
     }
 
-    public void setAddress(String newAddress) {
-        this.address = newAddress;
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
     }
 
     public void setPhone(String newPhone) {

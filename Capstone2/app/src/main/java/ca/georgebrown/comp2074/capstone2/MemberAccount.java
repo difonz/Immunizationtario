@@ -12,7 +12,7 @@ public class MemberAccount {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private int id;
+    private long id;
 
     @NonNull
     @ColumnInfo(name = "name")
@@ -38,7 +38,7 @@ public class MemberAccount {
         accountID = acc;
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -68,5 +68,7 @@ public class MemberAccount {
     public void setDob(String newDob) {
         this.dob = newDob;
     }
+
+    public void setAccountID(int newAccId) { this.accountID = newAccId; }
 
 }

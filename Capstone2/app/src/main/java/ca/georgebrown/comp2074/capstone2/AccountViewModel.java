@@ -57,16 +57,28 @@ public class AccountViewModel extends AndroidViewModel {
         return mRepository.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalUser(int id) {
-        return mRepository.getPersonalUser(id);
+    LiveData<PersonalAccount> getPersonalById(int id) {
+        return mRepository.getPersonalById(id);
     }
 
-    LiveData<DoctorAccount> getDoctorUser(int id) {
-        return mRepository.getDoctorUser(id);
+    LiveData<DoctorAccount> getDoctorById(int id) {
+        return mRepository.getDoctorById(id);
     }
 
-    LiveData<SchoolAccount> getSchoolUser(int id) {
-        return mRepository.getSchoolUser(id);
+    LiveData<SchoolAccount> getSchoolById(int id) {
+        return mRepository.getSchoolById(id);
+    }
+
+    LiveData<PersonalAccount> getPersonalByEmail(String email) {
+        return mRepository.getPersonalByEmail(email);
+    }
+
+    LiveData<DoctorAccount> getDoctorByEmail(String email) {
+        return mRepository.getDoctorByEmail(email);
+    }
+
+    LiveData<SchoolAccount> getSchoolByEmail(String email) {
+        return mRepository.getSchoolByEmail(email);
     }
 
     // INSERTS

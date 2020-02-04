@@ -11,7 +11,7 @@ public class DoctorAccount {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name="id")
-    private int id;
+    private long id;
 
     @NonNull
     @ColumnInfo(name="name")
@@ -23,14 +23,22 @@ public class DoctorAccount {
     @ColumnInfo(name="phone")
     private String phone;
 
+    @ColumnInfo(name="email")
+    private String email;
 
-    public DoctorAccount(String n, String a, String p) {
+    @ColumnInfo(name="password")
+    private String password;
+
+
+    public DoctorAccount(String n, String a, String p, String e, String pass) {
         name = n;
         address = a;
         phone = p;
+        email = e;
+        password = pass;
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -47,6 +55,10 @@ public class DoctorAccount {
         return this.phone;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
     public void setName(String newName) {
         this.name = newName;
     }
@@ -57,5 +69,9 @@ public class DoctorAccount {
 
     public void setPhone(String newPhone) {
         this.phone = newPhone;
+    }
+
+    public void setEmail(String newEmail) {
+        this.phone = newEmail;
     }
 }

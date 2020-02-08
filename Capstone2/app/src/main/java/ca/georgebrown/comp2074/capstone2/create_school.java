@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,17 +41,21 @@ public class create_school extends AppCompatActivity {
                 String email = txtEmail.getText().toString();
                 String password = txtPassword.getText().toString();
 
-                if (accountViewModel.getSchoolByEmail(email) == null) {
-                    // create account and insert into database
-                    SchoolAccount sa = new SchoolAccount(name, schoolName, address, phone, email, password);
-                    accountViewModel.insertSchool(sa);
-                    Toast.makeText(create_school.this, "School account created. Please log in with your email and password.", Toast.LENGTH_LONG).show();
+                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
+                    if (accountViewModel.getSchoolByEmail(email) == null) {
+                        // create account and insert into database
+                        SchoolAccount sa = new SchoolAccount(name, schoolName, address, phone, email, password);
+                        accountViewModel.insertSchool(sa);
+                        Toast.makeText(create_school.this, "School account created. Please log in with your email and password.", Toast.LENGTH_LONG).show();
 
-                    Intent i = new Intent(v.getContext(), Login.class);
-                    startActivity(i);
-                    finish();
+                        Intent i = new Intent(v.getContext(), Login.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Toast.makeText(create_school.this, "An account with that email already exists!", Toast.LENGTH_LONG).show();
+                    }
                 } else {
-                    Toast.makeText(create_school.this, "An account with that email already exists!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(create_school.this, "Email and password cannot be empty!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -87,6 +87,10 @@ public class PersonalAccount {
         return this.schoolID;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
     public void setName(String newName) {
         this.name = newName;
     }
@@ -113,5 +117,9 @@ public class PersonalAccount {
 
     public void setSchoolID(int sID) {
         this.schoolID = sID;
+    }
+
+    public void setPassword(String newPass) {
+        this.password = newPass;
     }
 }

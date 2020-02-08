@@ -29,13 +29,17 @@ public class DoctorAccount {
     @ColumnInfo(name="password")
     private String password;
 
+    @ColumnInfo(name="pracID")
+    private String pracID;
 
-    public DoctorAccount(String n, String a, String p, String e, String pass) {
+
+    public DoctorAccount(String n, String a, String p, String e, String pass, String pID) {
         name = n;
         address = a;
         phone = p;
         email = e;
         password = pass;
+        pracID = pID;
     }
 
     public long getId() {
@@ -59,6 +63,14 @@ public class DoctorAccount {
         return this.email;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
+    public String getPracID() {
+        return this.pracID;
+    }
+
     public void setName(String newName) {
         this.name = newName;
     }
@@ -73,5 +85,13 @@ public class DoctorAccount {
 
     public void setEmail(String newEmail) {
         this.phone = newEmail;
+    }
+
+    public void setPassword(String newPass) {
+        this.password = newPass;
+    }
+
+    public void setPracID(String newPracID) {
+        this.password = newPracID;
     }
 }

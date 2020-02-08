@@ -67,8 +67,16 @@ public class SchoolAccount {
         return this.email;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String newPass) {
+        this.password = newPass;
+    }
+
     public void setEmail(String newEmail) {
-        this.phone = newEmail;
+        this.email = newEmail;
     }
 
     public void setName(String newName) {

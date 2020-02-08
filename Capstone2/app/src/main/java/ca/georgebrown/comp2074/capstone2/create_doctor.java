@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,18 +39,23 @@ public class create_doctor extends AppCompatActivity {
                 String phone = txtPhone.getText().toString();
                 String email = txtEmail.getText().toString();
                 String password = txtPassword.getText().toString();
+                String pracID = txtPractitionID.getText().toString();
 
-                if (accountViewModel.getDoctorByEmail(email) == null) {
-                    // create account and insert into database
-                    DoctorAccount da = new DoctorAccount(name, address, phone, email, password);
-                    accountViewModel.insertDoctor(da);
-                    Toast.makeText(create_doctor.this, "Doctor account created. Please log in with your email and password.", Toast.LENGTH_LONG).show();
+                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
+                    if (accountViewModel.getDoctorByEmail(email) == null) {
+                        // create account and insert into database
+                        DoctorAccount da = new DoctorAccount(name, address, phone, email, password, pracID);
+                        accountViewModel.insertDoctor(da);
+                        Toast.makeText(create_doctor.this, "Doctor account created. Please log in with your email and password.", Toast.LENGTH_LONG).show();
 
-                    Intent i = new Intent(v.getContext(), Login.class);
-                    startActivity(i);
-                    finish();
+                        Intent i = new Intent(v.getContext(), Login.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Toast.makeText(create_doctor.this, "An account with that email already exists!", Toast.LENGTH_LONG).show();
+                    }
                 } else {
-                    Toast.makeText(create_doctor.this, "An account with that email already exists!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(create_doctor.this, "email and password cannot be empty!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

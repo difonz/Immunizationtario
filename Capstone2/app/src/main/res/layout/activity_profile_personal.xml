@@ -5,7 +5,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E8F8E8"
-    tools:context=".Profile_personal">
+    tools:context=".PersonalProfileActivity">
+
+    <Button
+        android:id="@+id/btnPProfileUpload"
+        android:layout_width="414dp"
+        android:layout_height="165dp"
+        android:background="#DD4E80"
+        android:text="Upload Your Photo here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPProfileTitle"
+        tools:layout_editor_absoluteY="130dp" />
+
+    <TextView
+        android:id="@+id/txtPProfileName"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="First - Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPProfileUpload" />
+
+    <EditText
+        android:id="@+id/txtPProfileDOB"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="DOB"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/txtPProfileHC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPProfileName" />
+
+    <TextView
+        android:id="@+id/txtPProfileHC"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:hint="111-111-111-1111-AA"
+        app:layout_constraintBottom_toTopOf="@+id/txtPProfilePhone"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/txtPProfilePhone"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="123-123-1234"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/txtPProfileEmail"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/txtPProfileEmail"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="abc@email.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/btnPProfileHome"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnPProfileHome"
@@ -42,17 +114,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/txt_fullname"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="First - Last Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button34" />
 
     <EditText
         android:id="@+id/editText7"
@@ -96,7 +157,7 @@
         android:layout_height="41dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:background="#C5E0C7"
         android:ems="10"
         android:inputType="textPersonName"
@@ -105,18 +166,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button34" />
-
-    <TextView
-        android:id="@+id/txt_healthno"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="111-111-111-1111-AA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dob" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPProfileUpload" />
 
     <EditText
         android:id="@+id/editText8"
@@ -153,69 +203,19 @@
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <EditText
-        android:id="@+id/txt_phone"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="123-123-1234"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_healthno" />
-
-    <EditText
-        android:id="@+id/txt_dob"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="DOB"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fullname" />
-
-    <EditText
-        android:id="@+id/txt_createmail"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="abc@email.com"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone" />
-
-    <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/txtPProfileTitle"
         android:layout_width="414dp"
         android:layout_height="57dp"
         android:background="#158B18"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="   My Profile, "
+        android:text="   My Profile"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button34"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
-
-    <Button
-        android:id="@+id/button34"
-        android:layout_width="414dp"
-        android:layout_height="165dp"
-        android:background="#DD4E80"
-        android:text="Upload Your Photo here"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

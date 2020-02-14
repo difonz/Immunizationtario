@@ -6,8 +6,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "member_table")
-public class MemberAccount {
+@Entity(tableName = "patient_table")
+public class PatientAccount {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -26,16 +26,21 @@ public class MemberAccount {
 
     // foreign key to the account id this member is associated with
     // CASCADE == if member's parent account is deleted, so is the member
-    @ForeignKey(entity = PersonalAccount.class, parentColumns = "id", childColumns = "accountID", onDelete = ForeignKey.CASCADE)
-    @ColumnInfo(name = "accountID")
-    private long accountID;
+    @ForeignKey(entity = DoctorAccount.class, parentColumns = "id", childColumns = "doctorID", onDelete = ForeignKey.CASCADE)
+    @ColumnInfo(name = "doctorID")
+    private long doctorID;
 
+    // All Patients must be Members set up by a Personal Account
+    @ForeignKey(entity = MemberAccount.class, parentColumns = "id", childColumns = "memberID", onDelete = ForeignKey.CASCADE)
+    @ColumnInfo(name = "memberID")
+    private long memberID;
 
-    public MemberAccount(String n, String d, String hc, long acc) {
+    public PatientAccount(String n, String d, String hc, long docID, long memID) {
         name = n;
         dob = d;
         healthCard = hc;
-        accountID = acc;
+        doctorID = docID;
+        memberID = memID;
     }
 
     public long getId() {
@@ -55,7 +60,9 @@ public class MemberAccount {
         return this.dob;
     }
 
-    public long getAccountID() { return this.accountID; }
+    public long getDoctorID() { return this.doctorID; }
+
+    public long getMemberID() { return this.memberID; }
 
     public void setName(String newName) {
         this.name = newName;
@@ -69,6 +76,8 @@ public class MemberAccount {
         this.dob = newDob;
     }
 
-    public void setAccountID(long newAccId) { this.accountID = newAccId; }
+    public void setDoctorID(long newDocId) { this.doctorID = newDocId; }
+
+    public void setMemberID(long newMemID) { this.memberID = newMemID; }
 
 }

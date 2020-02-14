@@ -31,11 +31,16 @@ public interface AccountDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     long insertImmunizationUser(Immunization_User immunization_user);
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    long insertPatient(PatientAccount patientAccount);
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    long insertStudent(StudentAccount studentAccount);
 
     // GETS
 
     @Query("SELECT * FROM member_table WHERE accountID = :id ORDER BY NAME ASC")
-    LiveData<List<MemberAccount>> getMembers(int id);
+    LiveData<List<MemberAccount>> getMembers(long id);
 
     @Query("SELECT * FROM member_table")
     LiveData<List<MemberAccount>> getMemberAccounts();
@@ -53,16 +58,19 @@ public interface AccountDAO {
     LiveData<List<Immunization>> getAllImmunizations();
 
     @Query("SELECT * FROM immunization_user WHERE userID = :userID")
-    LiveData<List<Immunization_User>> getUserImmunizations(int userID);
+    LiveData<List<Immunization_User>> getUserImmunizations(long userID);
 
     @Query("SELECT * FROM personal_table WHERE id = :id")
-    LiveData<PersonalAccount> getPersonalById(int id);
+    LiveData<PersonalAccount> getPersonalById(long id);
 
     @Query("SELECT * FROM doctor_table WHERE id = :id")
-    LiveData<DoctorAccount> getDoctorById(int id);
+    LiveData<DoctorAccount> getDoctorById(long id);
 
     @Query("SELECT * FROM school_table WHERE id = :id")
-    LiveData<SchoolAccount> getSchoolById(int id);
+    LiveData<SchoolAccount> getSchoolById(long id);
+
+    @Query("SELECT * FROM member_table WHERE id = :id")
+    LiveData<MemberAccount> getMemberById(long id);
 
     @Query("SELECT * FROM personal_table WHERE email = :email")
     LiveData<PersonalAccount> getPersonalByEmail(String email);
@@ -73,13 +81,25 @@ public interface AccountDAO {
     @Query("SELECT * FROM school_table WHERE email = :email")
     LiveData<SchoolAccount> getSchoolByEmail(String email);
 
+    @Query("SELECT * FROM patient_table WHERE doctorID = :doctorID")
+    LiveData<List<PatientAccount>> getPatients(long doctorID);
+
+    @Query("SELECT * FROM student_table WHERE schoolID = :schoolID")
+    LiveData<List<StudentAccount>> getStudents(long schoolID);
+
+    @Query("SELECT * FROM patient_table WHERE id = :id")
+    LiveData<PatientAccount> getPatientById(long id);
+
+    @Query("SELECT * FROM patient_table WHERE id = :id")
+    LiveData<StudentAccount> getStudentById(long id);
+
     // UPDATES
 
     @Query("UPDATE personal_table SET doctorID = :doctorID WHERE id = :id")
-    void updatePersonalDoctor(int id, int doctorID);
+    void updatePersonalDoctor(long id, long doctorID);
 
     @Query("UPDATE personal_table SET schoolID = :schoolID WHERE id = :id")
-    void updatePersonalSchool(int id, int schoolID);
+    void updatePersonalSchool(long id, long schoolID);
 
 
     /* DELETES

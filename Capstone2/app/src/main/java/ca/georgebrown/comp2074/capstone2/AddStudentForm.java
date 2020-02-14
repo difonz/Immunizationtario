@@ -5,18 +5,36 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+
+import static java.lang.Long.parseLong;
 
 public class AddStudentForm extends AppCompatActivity {
+
+    private AccountViewModel accountViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student_form);
+
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        Long accID = sharedPref.getLong("id", 0);
+
+        accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
+        final SchoolAccount sa = accountViewModel.getSchoolById(accID).getValue();
+
+        EditText txtName = findViewById(R.id.txtAddStudentName);
+        EditText txtDOB = findViewById(R.id.txtAddStudentDob);
+        EditText txtHealthCard = findViewById(R.id.txtAddStudentHC);
+        EditText txtMemberID = findViewById(R.id.txtAddStudentMemberID);
 
         Button btnCancel = findViewById(R.id.btnSAddCancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -32,13 +50,25 @@ public class AddStudentForm extends AppCompatActivity {
         btnAddNewStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // create the new person and add into the database
-
-                // create a pop up message and redirect
-                Toast.makeText(AddStudentForm.this, "Student added to your account", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(v.getContext(), home_school.class);
-                startActivity(i);
-                finish();
+                // create the new student and add into the database
+                String name = txtName.getText().toString();
+                String dob = txtDOB.getText().toString();
+                String hc = txtHealthCard.getText().toString();
+                Long memberID = parseLong(txtMemberID.getText().toString());
+                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dob) && !TextUtils.isEmpty(hc)) {
+                    if (accountViewModel.getMemberById(memberID) != null) {
+                        StudentAccount student = new StudentAccount(name, dob, hc, accID, memberID);
+                        accountViewModel.insertStudent(student);
+                        Toast.makeText(AddStudentForm.this, "Student added to your account", Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(v.getContext(), home_school.class);
+                        startActivity(i);
+                        finish();
+                    } else {
+                        Toast.makeText(AddStudentForm.this, "Member with that ID does not exist!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(AddStudentForm.this, "All fields must be filled out!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -51,24 +51,44 @@ public class AccountRepository {
         return allImmunizations;
     }
 
-    LiveData<List<MemberAccount>> getMembers(int id) {
+    LiveData<List<MemberAccount>> getMembers(long id) {
         return accountDAO.getMembers(id);
     }
 
-    LiveData<List<Immunization_User>> getUserImmunizations(int userID) {
+    LiveData<List<PatientAccount>> getPatients(long doctorID) {
+        return accountDAO.getPatients(doctorID);
+    }
+
+    LiveData<List<StudentAccount>> getStudents(long schoolID) {
+        return accountDAO.getStudents(schoolID);
+    }
+
+    LiveData<List<Immunization_User>> getUserImmunizations(long userID) {
         return accountDAO.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalById(int id) {
+    LiveData<PersonalAccount> getPersonalById(long id) {
         return accountDAO.getPersonalById(id);
     }
 
-    LiveData<DoctorAccount> getDoctorById(int id) {
+    LiveData<DoctorAccount> getDoctorById(long id) {
         return accountDAO.getDoctorById(id);
     }
 
-    LiveData<SchoolAccount> getSchoolById(int id) {
+    LiveData<SchoolAccount> getSchoolById(long id) {
         return accountDAO.getSchoolById(id);
+    }
+
+    LiveData<MemberAccount> getMemberById(long id) {
+        return accountDAO.getMemberById(id);
+    }
+
+    LiveData<PatientAccount> getPatientById(long id) {
+        return accountDAO.getPatientById(id);
+    }
+
+    LiveData<StudentAccount> getStudentById(long id) {
+        return accountDAO.getStudentById(id);
     }
 
     LiveData<PersonalAccount> getPersonalByEmail(String email) {
@@ -101,6 +121,14 @@ public class AccountRepository {
 
     void insertMember(MemberAccount ma) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.insertMember(ma); });
+    }
+
+    void insertPatient(PatientAccount pa) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.insertPatient(pa); });
+    }
+
+    void insertStudent(StudentAccount sa) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.insertStudent(sa); });
     }
 
     void insertImmunization(Immunization imm) {

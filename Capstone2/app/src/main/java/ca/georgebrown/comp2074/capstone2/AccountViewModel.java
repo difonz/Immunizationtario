@@ -49,24 +49,44 @@ public class AccountViewModel extends AndroidViewModel {
         return allImmunizations;
     }
 
-    LiveData<List<MemberAccount>> getMembers(int id) {
+    LiveData<List<MemberAccount>> getMembers(long id) {
         return mRepository.getMembers(id);
     }
 
-    LiveData<List<Immunization_User>> getUserImmunizations(int userID) {
+    LiveData<List<PatientAccount>> getPatients(long doctorID) {
+        return mRepository.getPatients(doctorID);
+    }
+
+    LiveData<List<StudentAccount>> getStudents(long schoolID) {
+        return mRepository.getStudents(schoolID);
+    }
+
+    LiveData<List<Immunization_User>> getUserImmunizations(long userID) {
         return mRepository.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalById(int id) {
+    LiveData<PersonalAccount> getPersonalById(long id) {
         return mRepository.getPersonalById(id);
     }
 
-    LiveData<DoctorAccount> getDoctorById(int id) {
+    LiveData<DoctorAccount> getDoctorById(long id) {
         return mRepository.getDoctorById(id);
     }
 
-    LiveData<SchoolAccount> getSchoolById(int id) {
+    LiveData<SchoolAccount> getSchoolById(long id) {
         return mRepository.getSchoolById(id);
+    }
+
+    LiveData<MemberAccount> getMemberById(long id) {
+        return mRepository.getMemberById(id);
+    }
+
+    LiveData<PatientAccount> getPatientById(long id) {
+        return mRepository.getPatientById(id);
+    }
+
+    LiveData<StudentAccount> getStudentById(long id) {
+        return mRepository.getStudentById(id);
     }
 
     LiveData<PersonalAccount> getPersonalByEmail(String email) {
@@ -97,6 +117,14 @@ public class AccountViewModel extends AndroidViewModel {
 
     void insertMember(MemberAccount ma) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertMember(ma); });
+    }
+
+    void insertPatient(PatientAccount pa) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertPatient(pa); });
+    }
+
+    void insertStudent(StudentAccount sa) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertStudent(sa); });
     }
 
     void insertImmunization(Immunization imm) {

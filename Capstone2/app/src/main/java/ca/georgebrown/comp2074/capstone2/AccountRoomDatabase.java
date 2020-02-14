@@ -9,7 +9,8 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {PersonalAccount.class, DoctorAccount.class, SchoolAccount.class, MemberAccount.class, Immunization.class, Immunization_User.class},
+@Database(entities = {PersonalAccount.class, DoctorAccount.class, SchoolAccount.class, Immunization.class, Immunization_User.class,
+        MemberAccount.class, PatientAccount.class, StudentAccount.class},
         version = 1, exportSchema = false)
 public abstract class AccountRoomDatabase extends RoomDatabase {
 

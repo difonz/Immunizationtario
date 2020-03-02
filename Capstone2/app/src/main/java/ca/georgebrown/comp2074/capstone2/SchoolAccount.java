@@ -33,13 +33,13 @@ public class SchoolAccount {
     private String password;
 
 
-    public SchoolAccount(String n, String sN, String a, String p, String e, String pass) {
-        name = n;
-        schoolName = sN;
-        address = a;
-        phone = p;
-        email = e;
-        password = pass;
+    public SchoolAccount(String name, String schoolName, String address, String phone, String email, String password) {
+        this.name = name;
+        this.schoolName = schoolName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
     }
 
     public long getId() {
@@ -74,6 +74,8 @@ public class SchoolAccount {
     public void setPassword(String newPass) {
         this.password = newPass;
     }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setEmail(String newEmail) {
         this.email = newEmail;

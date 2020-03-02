@@ -25,7 +25,7 @@ public class SchoolProfileActivity extends AppCompatActivity {
         String email = sharedPref.getString("email", "");
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        SchoolAccount sa = accountViewModel.getSchoolByEmail(email).getValue();
+        SchoolAccount sa = accountViewModel.getSchoolByEmail(email);
 
         EditText txtTitle = findViewById(R.id.txtSProfileTitle);
         TextView txtName = findViewById(R.id.txtSProfileName);
@@ -34,12 +34,14 @@ public class SchoolProfileActivity extends AppCompatActivity {
         TextView txtPhone = findViewById(R.id.txtSProfilePhone);
         TextView txtEmail = findViewById(R.id.txtSProfileEmail);
 
-        txtTitle.setText(sa.getName() + "'s Profile");
-        txtName.setText(sa.getName());
-        txtSchoolName.setText(sa.getSchoolName());
-        txtAddress.setText(sa.getAddress());
-        txtPhone.setText(sa.getPhone());
-        txtEmail.setText(sa.getEmail());
+        if (sa != null) {
+            txtTitle.setText(sa.getName() + "'s Profile");
+            txtName.setText(sa.getName());
+            txtSchoolName.setText(sa.getSchoolName());
+            txtAddress.setText(sa.getAddress());
+            txtPhone.setText(sa.getPhone());
+            txtEmail.setText(sa.getEmail());
+        }
 
         Button btnHome = findViewById(R.id.btnSProfileHome);
         btnHome.setOnClickListener(new View.OnClickListener() {

@@ -33,11 +33,11 @@ public class Immunization_User {
     private int immunizationID;
 
 
-    public Immunization_User(String d, int uid, int did, int immid) {
-        date = d;
-        userID = uid;
-        doctorID = did;
-        immunizationID = immid;
+    public Immunization_User(String date, int userID, int doctorID, int immunizationID) {
+        this.date = date;
+        this.userID = userID;
+        this.doctorID = doctorID;
+        this.immunizationID = immunizationID;
     }
 
     public int getId() {
@@ -54,6 +54,8 @@ public class Immunization_User {
     public int getDoctorID() { return this.doctorID; }
 
     public int getImmunizationID() { return this.immunizationID; }
+
+    public void setId(int newID) { this.id = newID; }
 
     public void setDate(String newDate) {
         this.date = newDate;

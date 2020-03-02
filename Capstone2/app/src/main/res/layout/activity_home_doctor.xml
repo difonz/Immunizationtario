@@ -90,14 +90,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SearchView
-        android:id="@+id/searchView2"
-        android:layout_width="362dp"
-        android:layout_height="47dp"
-        android:background="#E6B5EE"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="155dp" />
-
     <Button
         android:id="@+id/btnDHomeInfo"
         android:layout_width="0dp"
@@ -147,13 +139,11 @@
         android:layout_height="200dp"
         android:layout_marginStart="70dp"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="70dp"
         android:layout_marginRight="70dp"
         android:layout_marginBottom="28dp"
         android:background="@drawable/doctor_h"
         app:layout_constraintBottom_toTopOf="@+id/btnDHomeAdd"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView2" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

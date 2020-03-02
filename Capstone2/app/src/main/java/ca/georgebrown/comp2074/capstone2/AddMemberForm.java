@@ -27,7 +27,7 @@ public class AddMemberForm extends AppCompatActivity {
         Long accID = sharedPref.getLong("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        PersonalAccount pa = accountViewModel.getPersonalById(accID).getValue();
+        PersonalAccount pa = accountViewModel.getPersonalById(accID);
 
         EditText txtName = findViewById(R.id.txtPAddName);
         EditText txtDOB = findViewById(R.id.txtPAddDob);

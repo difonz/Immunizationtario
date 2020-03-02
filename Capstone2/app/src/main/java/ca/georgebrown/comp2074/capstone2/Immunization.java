@@ -21,9 +21,9 @@ public class Immunization {
     private String info;
 
 
-    public Immunization(String n, String i) {
-        name = n;
-        info = i;
+    public Immunization(String name, String info) {
+        this.name = name;
+        this.info = info;
     }
 
     public int getId() {
@@ -38,6 +38,8 @@ public class Immunization {
     public String getInfo() {
         return this.info;
     }
+
+    public void setId(int newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;

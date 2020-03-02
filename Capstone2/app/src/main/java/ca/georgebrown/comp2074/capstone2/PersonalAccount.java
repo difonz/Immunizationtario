@@ -43,15 +43,15 @@ public class PersonalAccount {
     private int schoolID;
 
 
-    public PersonalAccount(String n, String e, String pass, String p, String d, String hc) {
-        name = n;
-        email = e;
-        password = pass;
-        phone = p;
-        dob = d;
-        healthCard = hc;
-        doctorID = 0; // account starts unassociated with any doctor/school
-        schoolID = 0; // the doctor/school is the entity that must initiate the foreign key association
+    public PersonalAccount(String name, String email, String password, String phone, String dob, String healthCard) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.dob = dob;
+        this.healthCard = healthCard;
+        this.doctorID = 0; // account starts unassociated with any doctor/school
+        this.schoolID = 0; // the doctor/school is the entity that must initiate the foreign key association
     }
 
     public long getId() {
@@ -90,6 +90,8 @@ public class PersonalAccount {
     public String getPassword() {
         return this.password;
     }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;

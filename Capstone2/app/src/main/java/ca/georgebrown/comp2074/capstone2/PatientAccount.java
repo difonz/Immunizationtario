@@ -35,12 +35,12 @@ public class PatientAccount {
     @ColumnInfo(name = "memberID")
     private long memberID;
 
-    public PatientAccount(String n, String d, String hc, long docID, long memID) {
-        name = n;
-        dob = d;
-        healthCard = hc;
-        doctorID = docID;
-        memberID = memID;
+    public PatientAccount(String name, String dob, String healthCard, long doctorID, long memberID) {
+        this.name = name;
+        this.dob = dob;
+        this.healthCard = healthCard;
+        this.doctorID = doctorID;
+        this.memberID = memberID;
     }
 
     public long getId() {
@@ -63,6 +63,8 @@ public class PatientAccount {
     public long getDoctorID() { return this.doctorID; }
 
     public long getMemberID() { return this.memberID; }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;

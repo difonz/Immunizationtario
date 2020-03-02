@@ -61,25 +61,25 @@ public interface AccountDAO {
     LiveData<List<Immunization_User>> getUserImmunizations(long userID);
 
     @Query("SELECT * FROM personal_table WHERE id = :id")
-    LiveData<PersonalAccount> getPersonalById(long id);
+    PersonalAccount getPersonalById(long id);
 
     @Query("SELECT * FROM doctor_table WHERE id = :id")
-    LiveData<DoctorAccount> getDoctorById(long id);
+    DoctorAccount getDoctorById(long id);
 
     @Query("SELECT * FROM school_table WHERE id = :id")
-    LiveData<SchoolAccount> getSchoolById(long id);
+    SchoolAccount getSchoolById(long id);
 
     @Query("SELECT * FROM member_table WHERE id = :id")
-    LiveData<MemberAccount> getMemberById(long id);
+    MemberAccount getMemberById(long id);
 
     @Query("SELECT * FROM personal_table WHERE email = :email")
-    LiveData<PersonalAccount> getPersonalByEmail(String email);
+    PersonalAccount getPersonalByEmail(String email);
 
     @Query("SELECT * FROM doctor_table WHERE email = :email")
-    LiveData<DoctorAccount> getDoctorByEmail(String email);
+    DoctorAccount getDoctorByEmail(String email);
 
     @Query("SELECT * FROM school_table WHERE email = :email")
-    LiveData<SchoolAccount> getSchoolByEmail(String email);
+    SchoolAccount getSchoolByEmail(String email);
 
     @Query("SELECT * FROM patient_table WHERE doctorID = :doctorID")
     LiveData<List<PatientAccount>> getPatients(long doctorID);
@@ -88,10 +88,10 @@ public interface AccountDAO {
     LiveData<List<StudentAccount>> getStudents(long schoolID);
 
     @Query("SELECT * FROM patient_table WHERE id = :id")
-    LiveData<PatientAccount> getPatientById(long id);
+    PatientAccount getPatientById(long id);
 
-    @Query("SELECT * FROM patient_table WHERE id = :id")
-    LiveData<StudentAccount> getStudentById(long id);
+    @Query("SELECT * FROM student_table WHERE id = :id")
+    StudentAccount getStudentById(long id);
 
     // UPDATES
 

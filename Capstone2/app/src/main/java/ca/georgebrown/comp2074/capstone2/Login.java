@@ -48,43 +48,55 @@ public class Login extends AppCompatActivity {
                 // un-null the account type that matches the checked radio button and login
                 switch (accType) {
                     case "Personal":
-                        PersonalAccount pa = accountViewModel.getPersonalByEmail(username).getValue();
-                        if (pa.getEmail().equals(username) && pa.getPassword().equals(password)){
-                            editor.putString("email", pa.getEmail());
-                            editor.putLong("id", pa.getId());
-                            editor.putString("name", pa.getName());
-                            editor.apply();
-                            intent = new Intent(v.getContext(), home_personal.class);
-                            startActivity(intent);
-                            finish();
+                        PersonalAccount pa = accountViewModel.getPersonalByEmail(username);
+                        if (pa != null) {
+                            if (pa.getEmail().equals(username) && pa.getPassword().equals(password)){
+                                editor.putString("email", pa.getEmail());
+                                editor.putLong("id", pa.getId());
+                                editor.putString("name", pa.getName());
+                                editor.apply();
+                                intent = new Intent(v.getContext(), home_personal.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                txtIncorrect.setText("Incorrect username or password");
+                            }
                         } else {
                             txtIncorrect.setText("Incorrect username or password");
                         }
                         break;
                     case "Doctor":
-                        DoctorAccount da = accountViewModel.getDoctorByEmail(username).getValue();
-                        if (da.getEmail().equals(username) && da.getPassword().equals(password)){
-                            editor.putString("email", da.getEmail());
-                            editor.putLong("id", da.getId());
-                            editor.putString("name", da.getName());
-                            editor.apply();
-                            intent = new Intent(v.getContext(), home_doctor.class);
-                            startActivity(intent);
-                            finish();
+                        DoctorAccount da = accountViewModel.getDoctorByEmail(username);
+                        if (da != null) {
+                            if (da.getEmail().equals(username) && da.getPassword().equals(password)){
+                                editor.putString("email", da.getEmail());
+                                editor.putLong("id", da.getId());
+                                editor.putString("name", da.getName());
+                                editor.apply();
+                                intent = new Intent(v.getContext(), home_doctor.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                txtIncorrect.setText("Incorrect username or password");
+                            }
                         } else {
                             txtIncorrect.setText("Incorrect username or password");
                         }
                         break;
                     case "School":
-                        SchoolAccount sa = accountViewModel.getSchoolByEmail(username).getValue();
-                        if (sa.getEmail().equals(username) && sa.getPassword().equals(password)){
-                            editor.putString("email", sa.getEmail());
-                            editor.putLong("id", sa.getId());
-                            editor.putString("name", sa.getName());
-                            editor.apply();
-                            intent = new Intent(v.getContext(), home_school.class);
-                            startActivity(intent);
-                            finish();
+                        SchoolAccount sa = accountViewModel.getSchoolByEmail(username);
+                        if (sa != null) {
+                            if (sa.getEmail().equals(username) && sa.getPassword().equals(password)){
+                                editor.putString("email", sa.getEmail());
+                                editor.putLong("id", sa.getId());
+                                editor.putString("name", sa.getName());
+                                editor.apply();
+                                intent = new Intent(v.getContext(), home_school.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                txtIncorrect.setText("Incorrect username or password");
+                            }
                         } else {
                             txtIncorrect.setText("Incorrect username or password");
                         }

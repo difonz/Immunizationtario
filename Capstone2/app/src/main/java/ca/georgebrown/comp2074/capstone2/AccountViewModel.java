@@ -17,6 +17,13 @@ public class AccountViewModel extends AndroidViewModel {
     private LiveData<List<MemberAccount>> allMembers;
     private LiveData<List<Immunization>> allImmunizations;
 
+    private PersonalAccount personalAccountLiveData;
+    private DoctorAccount doctorAccountLiveData;
+    private SchoolAccount schoolAccountLiveData;
+    private MemberAccount memberAccountLiveData;
+    private PatientAccount patientAccountLiveData;
+    private StudentAccount studentAccountLiveData;
+
     public AccountViewModel (Application application) {
         super(application);
         mRepository = new AccountRepository(application);
@@ -65,40 +72,67 @@ public class AccountViewModel extends AndroidViewModel {
         return mRepository.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalById(long id) {
-        return mRepository.getPersonalById(id);
+    PersonalAccount getPersonalById(long id) {
+        if (personalAccountLiveData == null) {
+            personalAccountLiveData = mRepository.getPersonalById(id);
+        }
+        return personalAccountLiveData;
     }
 
-    LiveData<DoctorAccount> getDoctorById(long id) {
-        return mRepository.getDoctorById(id);
+    DoctorAccount getDoctorById(long id) {
+        if (doctorAccountLiveData == null) {
+            doctorAccountLiveData = mRepository.getDoctorById(id);
+        }
+        return doctorAccountLiveData;
     }
 
-    LiveData<SchoolAccount> getSchoolById(long id) {
-        return mRepository.getSchoolById(id);
+    SchoolAccount getSchoolById(long id) {
+        if (schoolAccountLiveData == null) {
+            schoolAccountLiveData = mRepository.getSchoolById(id);
+        }
+        return schoolAccountLiveData;
     }
 
-    LiveData<MemberAccount> getMemberById(long id) {
-        return mRepository.getMemberById(id);
+    MemberAccount getMemberById(long id) {
+        if (memberAccountLiveData == null) {
+            memberAccountLiveData = mRepository.getMemberById(id);
+        }
+        return memberAccountLiveData;
     }
 
-    LiveData<PatientAccount> getPatientById(long id) {
-        return mRepository.getPatientById(id);
+    PatientAccount getPatientById(long id) {
+        if (patientAccountLiveData == null) {
+            patientAccountLiveData = mRepository.getPatientById(id);
+        }
+        return patientAccountLiveData;
     }
 
-    LiveData<StudentAccount> getStudentById(long id) {
-        return mRepository.getStudentById(id);
+    StudentAccount getStudentById(long id) {
+        if (studentAccountLiveData == null) {
+            studentAccountLiveData = mRepository.getStudentById(id);
+        }
+        return studentAccountLiveData;
     }
 
-    LiveData<PersonalAccount> getPersonalByEmail(String email) {
-        return mRepository.getPersonalByEmail(email);
+    PersonalAccount getPersonalByEmail(String email) {
+        if (personalAccountLiveData == null) {
+            personalAccountLiveData = mRepository.getPersonalByEmail(email);
+        }
+        return personalAccountLiveData;
     }
 
-    LiveData<DoctorAccount> getDoctorByEmail(String email) {
-        return mRepository.getDoctorByEmail(email);
+    DoctorAccount getDoctorByEmail(String email) {
+        if (doctorAccountLiveData == null) {
+            doctorAccountLiveData = mRepository.getDoctorByEmail(email);
+        }
+        return doctorAccountLiveData;
     }
 
-    LiveData<SchoolAccount> getSchoolByEmail(String email) {
-        return mRepository.getSchoolByEmail(email);
+    SchoolAccount getSchoolByEmail(String email) {
+        if (schoolAccountLiveData == null) {
+            schoolAccountLiveData = mRepository.getSchoolByEmail(email);
+        }
+        return schoolAccountLiveData;
     }
 
     // INSERTS

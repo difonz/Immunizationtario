@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F7E583"
-    tools:context=".Vaccine_Info">
+    tools:context=".VaccineInfoActivity">
 
     <Button
         android:id="@+id/btnPHome"
@@ -42,28 +42,11 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="414dp"
-        android:layout_height="558dp"
+        android:layout_width="401dp"
+        android:layout_height="354dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/button42"
-                android:layout_width="202dp"
-                android:layout_height="match_parent"
-                android:text="Vaccine Info" />
-
-            <Button
-                android:id="@+id/button41"
-                android:layout_width="212dp"
-                android:layout_height="wrap_content"
-                android:text="Travel Vaccine Info" />
-        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
@@ -77,4 +60,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+
+    <Button
+        android:id="@+id/btnVaccineInfoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Link to Vaccine Information"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnTravelVaccineInfoLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText20" />
+
+    <Button
+        android:id="@+id/btnTravelVaccineInfoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Link to Travel Vaccine Information"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="#F8F6F6"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

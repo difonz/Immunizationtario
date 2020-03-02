@@ -36,12 +36,12 @@ public class StudentAccount {
     private long memberID;
 
 
-    public StudentAccount(String n, String d, String hc, long sID, long memID) {
-        name = n;
-        dob = d;
-        healthCard = hc;
-        schoolID = sID;
-        memberID = memID;
+    public StudentAccount(String name, String dob, String healthCard, long schoolID, long memberID) {
+        this.name = name;
+        this.dob = dob;
+        this.healthCard = healthCard;
+        this.schoolID = schoolID;
+        this.memberID = memberID;
     }
 
     public long getId() {
@@ -64,6 +64,8 @@ public class StudentAccount {
     public long getSchoolID() { return this.schoolID; }
 
     public long getMemberID() { return this.memberID; }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;

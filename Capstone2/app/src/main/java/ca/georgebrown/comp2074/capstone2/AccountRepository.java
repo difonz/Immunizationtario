@@ -67,39 +67,39 @@ public class AccountRepository {
         return accountDAO.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalById(long id) {
+    PersonalAccount getPersonalById(long id) {
         return accountDAO.getPersonalById(id);
     }
 
-    LiveData<DoctorAccount> getDoctorById(long id) {
+    DoctorAccount getDoctorById(long id) {
         return accountDAO.getDoctorById(id);
     }
 
-    LiveData<SchoolAccount> getSchoolById(long id) {
+    SchoolAccount getSchoolById(long id) {
         return accountDAO.getSchoolById(id);
     }
 
-    LiveData<MemberAccount> getMemberById(long id) {
+    MemberAccount getMemberById(long id) {
         return accountDAO.getMemberById(id);
     }
 
-    LiveData<PatientAccount> getPatientById(long id) {
+    PatientAccount getPatientById(long id) {
         return accountDAO.getPatientById(id);
     }
 
-    LiveData<StudentAccount> getStudentById(long id) {
+    StudentAccount getStudentById(long id) {
         return accountDAO.getStudentById(id);
     }
 
-    LiveData<PersonalAccount> getPersonalByEmail(String email) {
+    PersonalAccount getPersonalByEmail(String email) {
         return accountDAO.getPersonalByEmail(email);
     }
 
-    LiveData<DoctorAccount> getDoctorByEmail(String email) {
+    DoctorAccount getDoctorByEmail(String email) {
         return accountDAO.getDoctorByEmail(email);
     }
 
-    LiveData<SchoolAccount> getSchoolByEmail(String email) {
+    SchoolAccount getSchoolByEmail(String email) {
         return accountDAO.getSchoolByEmail(email);
     }
 

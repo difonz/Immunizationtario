@@ -24,7 +24,7 @@ public abstract class AccountRoomDatabase extends RoomDatabase {
         if (INSTANCE == null) {
             synchronized (AccountRoomDatabase.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AccountRoomDatabase.class, "account_database").build();
+                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AccountRoomDatabase.class, "account_database").allowMainThreadQueries().build();
                 }
             }
         }

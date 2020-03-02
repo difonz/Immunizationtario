@@ -33,13 +33,13 @@ public class DoctorAccount {
     private String pracID;
 
 
-    public DoctorAccount(String n, String a, String p, String e, String pass, String pID) {
-        name = n;
-        address = a;
-        phone = p;
-        email = e;
-        password = pass;
-        pracID = pID;
+    public DoctorAccount(String name, String address, String phone, String email, String password, String pracID) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
+        this.pracID = pracID;
     }
 
     public long getId() {
@@ -70,6 +70,8 @@ public class DoctorAccount {
     public String getPracID() {
         return this.pracID;
     }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;

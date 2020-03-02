@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     android:background="#FCCC41">
 
+    <Button
+        android:id="@+id/btnForgotPassword"
+        android:layout_width="231dp"
+        android:layout_height="53dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Forgot Password?"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_create_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
     <EditText
         android:id="@+id/txtLoginTitle"
         android:layout_width="407dp"
@@ -28,22 +42,23 @@
         android:id="@+id/btnLogin"
         android:layout_width="231dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="32dp"
         android:background="@android:color/holo_red_dark"
         android:text="Login"
         android:textColor="@android:color/white"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnForgotPass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtIncorrect"
+        app:layout_constraintBottom_toTopOf="@+id/btnForgotPassword"
+        tools:layout_editor_absoluteY="451dp" />
 
     <Button
         android:id="@+id/btn_create_account"
         android:layout_width="309dp"
         android:layout_height="55dp"
         android:layout_marginBottom="32dp"
-        android:background="@android:color/holo_red_dark"
+        android:background="@color/design_default_color_primary"
         android:text="Create New Account"
         android:textColor="@android:color/white"
         android:textSize="22sp"
@@ -70,31 +85,16 @@
         android:id="@+id/txtLoginPassword"
         android:layout_width="336dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="64dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="#5C0F83"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintBottom_toTopOf="@+id/AccountTypeRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtLoginEmail" />
-
-    <EditText
-        android:id="@+id/btnForgotPass"
-        android:layout_width="213dp"
-        android:layout_height="69dp"
-        android:layout_marginBottom="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Forgot Password?"
-        android:textColor="#3F51B5"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_create_account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtIncorrect"

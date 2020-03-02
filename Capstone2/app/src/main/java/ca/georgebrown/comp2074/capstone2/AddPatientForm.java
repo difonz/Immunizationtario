@@ -29,7 +29,7 @@ public class AddPatientForm extends AppCompatActivity {
         Long accID = sharedPref.getLong("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        final DoctorAccount da = accountViewModel.getDoctorById(accID).getValue();
+        final DoctorAccount da = accountViewModel.getDoctorById(accID);
 
         EditText txtName = findViewById(R.id.txtAddPatientName);
         EditText txtDOB = findViewById(R.id.txtAddPatientDob);

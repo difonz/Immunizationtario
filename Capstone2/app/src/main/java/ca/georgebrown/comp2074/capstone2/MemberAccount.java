@@ -31,11 +31,11 @@ public class MemberAccount {
     private long accountID;
 
 
-    public MemberAccount(String n, String d, String hc, long acc) {
-        name = n;
-        dob = d;
-        healthCard = hc;
-        accountID = acc;
+    public MemberAccount(String name, String dob, String healthCard, long accountID) {
+        this.name = name;
+        this.dob = dob;
+        this.healthCard = healthCard;
+        this.accountID = accountID;
     }
 
     public long getId() {
@@ -56,6 +56,8 @@ public class MemberAccount {
     }
 
     public long getAccountID() { return this.accountID; }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;

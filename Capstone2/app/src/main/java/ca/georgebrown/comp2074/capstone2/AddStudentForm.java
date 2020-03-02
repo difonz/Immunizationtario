@@ -29,7 +29,7 @@ public class AddStudentForm extends AppCompatActivity {
         Long accID = sharedPref.getLong("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        final SchoolAccount sa = accountViewModel.getSchoolById(accID).getValue();
+        final SchoolAccount sa = accountViewModel.getSchoolById(accID);
 
         EditText txtName = findViewById(R.id.txtAddStudentName);
         EditText txtDOB = findViewById(R.id.txtAddStudentDob);

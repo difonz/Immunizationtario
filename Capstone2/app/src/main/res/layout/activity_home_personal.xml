@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:background="#27B32C"
-        android:text="Family Member's Record"
+        android:text="View Family Members"
         android:textColor="#FAF7F7"
         android:textSize="18sp"
         android:textStyle="bold"

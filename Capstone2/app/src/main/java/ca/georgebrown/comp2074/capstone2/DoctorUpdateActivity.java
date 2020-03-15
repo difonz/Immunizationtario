@@ -11,7 +11,7 @@ public class DoctorUpdateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_doctor);
+        setContentView(R.layout.activity_add_vaccine);
 
         Button btnSave = findViewById(R.id.btnDSaveUpdate);
         btnSave.setOnClickListener(new View.OnClickListener() {

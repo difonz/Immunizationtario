@@ -90,7 +90,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("email", sa.getEmail());
                                 editor.putLong("id", sa.getId());
                                 editor.putString("name", sa.getName());
-                                editor.apply();
+                                editor.commit();
                                 intent = new Intent(v.getContext(), home_school.class);
                                 startActivity(intent);
                                 finish();

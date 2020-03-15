@@ -36,7 +36,9 @@
         <activity android:name=".AddMemberForm" />
         <activity android:name=".AddPatientForm" />
         <activity android:name=".AddStudentForm" />
-        <activity android:name=".ViewRecordActivity" />
+        <activity android:name=".AddVaccineActivity" />
+        <activity android:name=".ViewMembersActivity" />
+        <activity android:name=".VaccineRecordActivity" />
     </application>
 
 </manifest>

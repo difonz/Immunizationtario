@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,23 +17,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ViewRecordActivity extends AppCompatActivity {
+public class ViewMembersActivity extends AppCompatActivity {
 
     private AccountViewModel accountViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_record);
+        setContentView(R.layout.activity_view_members);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         Long accID = sharedPref.getLong("id", 0);
 
-        // associate recyclerView with our AccountListAdapter
+        // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.PMembersRecyclerView);
-        final AccountListAdapter adapter = new AccountListAdapter(this);
-        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // add the AccountListAdapter and the onClick listener to the recycler view
+        final MemberListAdapter adapter = new MemberListAdapter(this);
+        recyclerView.setAdapter(adapter);
 
         // get an instance of the accountViewModel
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
@@ -45,7 +48,7 @@ public class ViewRecordActivity extends AppCompatActivity {
             }
         });
 
-        Button btnBack = findViewById(R.id.btnViewRecordHome);
+        Button btnBack = findViewById(R.id.btnViewMembersHome);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

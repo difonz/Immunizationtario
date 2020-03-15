@@ -83,6 +83,10 @@ public class AccountRepository {
         return accountDAO.getMemberById(id);
     }
 
+    MemberAccount getMemberByHC(String healthCard) {
+        return accountDAO.getMemberByHC(healthCard);
+    }
+
     PatientAccount getPatientById(long id) {
         return accountDAO.getPatientById(id);
     }

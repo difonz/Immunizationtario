@@ -79,7 +79,7 @@ public class home_personal extends AppCompatActivity {
         btnFamilyRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), ViewRecordActivity.class);
+                Intent i = new Intent(v.getContext(), ViewMembersActivity.class);
                 startActivity(i);
             }
         });

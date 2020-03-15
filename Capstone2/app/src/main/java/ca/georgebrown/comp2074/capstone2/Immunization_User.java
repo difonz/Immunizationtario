@@ -22,22 +22,27 @@ public class Immunization_User {
     // foreign key to the user's id this immunization is associated with
     @ForeignKey(entity = PersonalAccount.class, parentColumns = "id", childColumns = "userID", onDelete = ForeignKey.CASCADE)
     @ColumnInfo(name = "userID")
-    private int userID;
+    private long userID;
 
     @ForeignKey(entity = DoctorAccount.class, parentColumns = "id", childColumns = "doctorID", onDelete = ForeignKey.CASCADE)
     @ColumnInfo(name = "doctorID")
-    private int doctorID;
+    private long doctorID;
 
+    /*
     @ForeignKey(entity = Immunization.class, parentColumns = "id", childColumns = "immunizationID", onDelete = ForeignKey.CASCADE)
     @ColumnInfo(name = "immunizationID")
     private int immunizationID;
+    */
+
+    @ColumnInfo(name = "name")
+    private String name;
 
 
-    public Immunization_User(String date, int userID, int doctorID, int immunizationID) {
+    public Immunization_User(String date, long userID, long doctorID, String name) {
         this.date = date;
         this.userID = userID;
         this.doctorID = doctorID;
-        this.immunizationID = immunizationID;
+        this.name = name;
     }
 
     public int getId() {
@@ -49,11 +54,11 @@ public class Immunization_User {
         return this.date;
     }
 
-    public int getUserID() { return this.userID; }
+    public long getUserID() { return this.userID; }
 
-    public int getDoctorID() { return this.doctorID; }
+    public long getDoctorID() { return this.doctorID; }
 
-    public int getImmunizationID() { return this.immunizationID; }
+    public String getName() { return this.name; }
 
     public void setId(int newID) { this.id = newID; }
 
@@ -69,7 +74,5 @@ public class Immunization_User {
         this.doctorID = newDID;
     }
 
-    public void setImmunizationID(int newImmID) {
-        this.immunizationID = newImmID;
-    }
+    public void setName(String newName) { this.name = newName; }
 }

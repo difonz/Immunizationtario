@@ -72,6 +72,9 @@ public interface AccountDAO {
     @Query("SELECT * FROM member_table WHERE id = :id")
     MemberAccount getMemberById(long id);
 
+    @Query("SELECT * FROM member_table WHERE healthCard = :healthCard")
+    MemberAccount getMemberByHC(String healthCard);
+
     @Query("SELECT * FROM personal_table WHERE email = :email")
     PersonalAccount getPersonalByEmail(String email);
 

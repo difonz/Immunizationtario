@@ -100,6 +100,13 @@ public class AccountViewModel extends AndroidViewModel {
         return memberAccountLiveData;
     }
 
+    MemberAccount getMemberByHC(String healthCard) {
+        if (memberAccountLiveData == null) {
+            memberAccountLiveData = mRepository.getMemberByHC(healthCard);
+        }
+        return memberAccountLiveData;
+    }
+
     PatientAccount getPatientById(long id) {
         if (patientAccountLiveData == null) {
             patientAccountLiveData = mRepository.getPatientById(id);

@@ -34,7 +34,6 @@ public class AddPatientForm extends AppCompatActivity {
         EditText txtName = findViewById(R.id.txtAddPatientName);
         EditText txtDOB = findViewById(R.id.txtAddPatientDob);
         EditText txtHealthCard = findViewById(R.id.txtAddPatientHC);
-        EditText txtMemberID = findViewById(R.id.txtAddPatientMemberID);
 
         Button btnCancel = findViewById(R.id.btnDAddCancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -54,17 +53,16 @@ public class AddPatientForm extends AppCompatActivity {
                 String name = txtName.getText().toString();
                 String dob = txtDOB.getText().toString();
                 String hc = txtHealthCard.getText().toString();
-                Long memberID = parseLong(txtMemberID.getText().toString());
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dob) && !TextUtils.isEmpty(hc)) {
-                    if (accountViewModel.getMemberById(memberID) != null) {
-                        PatientAccount pa = new PatientAccount(name, dob, hc, accID, memberID);
+                    if (accountViewModel.getMemberByHC(hc) != null) {
+                        PatientAccount pa = new PatientAccount(name, dob, hc, accID);
                         accountViewModel.insertPatient(pa);
                         Toast.makeText(AddPatientForm.this, "Patient added to your account", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(v.getContext(), home_doctor.class);
                         startActivity(i);
                         finish();
                     } else {
-                        Toast.makeText(AddPatientForm.this, "Member with that ID does not exist!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddPatientForm.this, "Patient with that health card # does not exist!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(AddPatientForm.this, "All fields must be filled out!", Toast.LENGTH_SHORT).show();

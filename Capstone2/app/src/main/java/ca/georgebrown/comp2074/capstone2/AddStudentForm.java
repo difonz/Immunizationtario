@@ -34,7 +34,6 @@ public class AddStudentForm extends AppCompatActivity {
         EditText txtName = findViewById(R.id.txtAddStudentName);
         EditText txtDOB = findViewById(R.id.txtAddStudentDob);
         EditText txtHealthCard = findViewById(R.id.txtAddStudentHC);
-        EditText txtMemberID = findViewById(R.id.txtAddStudentMemberID);
 
         Button btnCancel = findViewById(R.id.btnSAddCancel);
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -54,17 +53,16 @@ public class AddStudentForm extends AppCompatActivity {
                 String name = txtName.getText().toString();
                 String dob = txtDOB.getText().toString();
                 String hc = txtHealthCard.getText().toString();
-                Long memberID = parseLong(txtMemberID.getText().toString());
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dob) && !TextUtils.isEmpty(hc)) {
-                    if (accountViewModel.getMemberById(memberID) != null) {
-                        StudentAccount student = new StudentAccount(name, dob, hc, accID, memberID);
+                    if (accountViewModel.getMemberByHC(hc) != null) {
+                        StudentAccount student = new StudentAccount(name, dob, hc, accID);
                         accountViewModel.insertStudent(student);
                         Toast.makeText(AddStudentForm.this, "Student added to your account", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(v.getContext(), home_school.class);
                         startActivity(i);
                         finish();
                     } else {
-                        Toast.makeText(AddStudentForm.this, "Member with that ID does not exist!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddStudentForm.this, "Student with that health card # does not exist!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(AddStudentForm.this, "All fields must be filled out!", Toast.LENGTH_SHORT).show();

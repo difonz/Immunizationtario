@@ -6,13 +6,20 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DoctorProfileActivity extends AppCompatActivity {
+public class DoctorProfileActivity extends AppCompatActivity implements View.OnClickListener{
+    // to upload image
+    private static final int RESULT_LOAD_IMAGE = 1;
+    ImageView btnDProfileUpload;
+    Button btn_uploadDoctor;
 
     private AccountViewModel accountViewModel;
 
@@ -26,7 +33,10 @@ public class DoctorProfileActivity extends AppCompatActivity {
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         DoctorAccount da = accountViewModel.getDoctorByEmail(email);
-
+        // To upload image
+        btnDProfileUpload = (ImageView) findViewById(R.id.btnDProfileUpload);
+        btn_uploadDoctor = (Button) findViewById(R.id.btn_uploadDoctor);
+        // ---
         EditText txtTitle = findViewById(R.id.txtDProfileTitle);
         TextView txtName = findViewById(R.id.txtDProfileName);
         TextView txtPractitionID = findViewById(R.id.txtDProfilePracID);
@@ -51,5 +61,35 @@ public class DoctorProfileActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        // to upload image
+        btnDProfileUpload.setOnClickListener(this);
+        btn_uploadDoctor.setOnClickListener(this);
+
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnDProfileUpload:
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(galleryIntent,RESULT_LOAD_IMAGE);
+
+                break;
+            case R.id.btn_uploadDoctor:
+
+                break;
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            btnDProfileUpload.setImageURI(selectedImage);
+        }
+    }
+
+
 }

@@ -54,6 +54,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("email", pa.getEmail());
                                 editor.putLong("id", pa.getId());
                                 editor.putString("name", pa.getName());
+                                editor.putString("accType", "personal");
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_personal.class);
                                 startActivity(intent);
@@ -72,6 +73,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("email", da.getEmail());
                                 editor.putLong("id", da.getId());
                                 editor.putString("name", da.getName());
+                                editor.putString("accType", "doctor");
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_doctor.class);
                                 startActivity(intent);
@@ -90,7 +92,8 @@ public class Login extends AppCompatActivity {
                                 editor.putString("email", sa.getEmail());
                                 editor.putLong("id", sa.getId());
                                 editor.putString("name", sa.getName());
-                                editor.commit();
+                                editor.putString("accType", "school");
+                                editor.apply();
                                 intent = new Intent(v.getContext(), home_school.class);
                                 startActivity(intent);
                                 finish();

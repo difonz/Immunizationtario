@@ -27,7 +27,7 @@ public class VaccineListAdapter extends RecyclerView.Adapter<VaccineListAdapter.
                     int position = getAdapterPosition();
                     if(position != RecyclerView.NO_POSITION){
                         Immunization_User vaccine = vaccineList.get(position);
-                        Toast.makeText(v.getContext(), "You clicked " + vaccine.getImmunizationID(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(v.getContext(), "You clicked " + vaccine.getName(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -52,7 +52,7 @@ public class VaccineListAdapter extends RecyclerView.Adapter<VaccineListAdapter.
     public void onBindViewHolder(VaccineViewHolder holder, int position) {
         if (vaccineList != null) {
             Immunization_User currentVax = vaccineList.get(position);
-            holder.accountItemView.setText("ID: " + currentVax.getImmunizationID() + "   Date: " + currentVax.getDate());
+            holder.accountItemView.setText("Name: " + currentVax.getName() + "         Date: " + currentVax.getDate());
 
         } else {
             // Covers the case of data not being ready yet.

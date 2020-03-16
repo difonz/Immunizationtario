@@ -30,18 +30,19 @@ public class StudentAccount {
     @ColumnInfo(name = "schoolID")
     private long schoolID;
 
+    /*
     // All Students must be Members set up by a Personal Account
     @ForeignKey(entity = MemberAccount.class, parentColumns = "id", childColumns = "memberID", onDelete = ForeignKey.CASCADE)
     @ColumnInfo(name = "memberID")
     private long memberID;
+     */
 
 
-    public StudentAccount(String name, String dob, String healthCard, long schoolID, long memberID) {
+    public StudentAccount(String name, String dob, String healthCard, long schoolID) {
         this.name = name;
         this.dob = dob;
         this.healthCard = healthCard;
         this.schoolID = schoolID;
-        this.memberID = memberID;
     }
 
     public long getId() {
@@ -63,8 +64,6 @@ public class StudentAccount {
 
     public long getSchoolID() { return this.schoolID; }
 
-    public long getMemberID() { return this.memberID; }
-
     public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
@@ -80,7 +79,4 @@ public class StudentAccount {
     }
 
     public void setSchoolID(long newSId) { this.schoolID = newSId; }
-
-    public void setMemberID(long newMemId) { this.memberID = newMemId; }
-
 }

@@ -34,6 +34,7 @@ public class Immunization_User {
     private int immunizationID;
     */
 
+    @NonNull
     @ColumnInfo(name = "name")
     private String name;
 

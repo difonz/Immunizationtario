@@ -4,8 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,8 +28,15 @@ public class VaccineRecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccine_record);
 
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        String accType = sharedPref.getString("accType", "personal");
+        Log.d("accType", accType);
+
         Intent i = getIntent();
         long memberID = i.getLongExtra("memberID", 0);
+        //MemberAccount member = accountViewModel.getMemberById(memberID);
+        TextView title = findViewById(R.id.VRecordTitle);
+        //title.setText("Vaccine Record for " + member.getName());
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.VRecordRecyclerView);
@@ -42,7 +52,7 @@ public class VaccineRecordActivity extends AppCompatActivity {
         accountViewModel.getUserImmunizations(memberID).observe(this, new Observer<List<Immunization_User>>() {
             @Override
             public void onChanged(@Nullable final List<Immunization_User> user_immunizations) {
-                // Update the cached copy of the members associated with this account in the adapter.
+                // Update the cached copy of the vaccines this member has associated with this account in the adapter.
                 adapter.setVaccineList(user_immunizations);
             }
         });
@@ -51,8 +61,15 @@ public class VaccineRecordActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), ViewMembersActivity.class);
-                startActivity(i);
+                Intent intent;
+                if (accType.equals("school")) {
+                    intent = new Intent(v.getContext(), ViewStudentsActivity.class);
+                } else if (accType.equals("doctor")) {
+                    intent = new Intent(v.getContext(), ViewPatientsActivity.class);
+                } else {
+                    intent = new Intent(v.getContext(), ViewMembersActivity.class);
+                }
+                startActivity(intent);
                 finish();
             }
         });

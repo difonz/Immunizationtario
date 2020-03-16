@@ -114,17 +114,17 @@
         android:textColor="#F7F3F3"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnDHomeRecords"
+        app:layout_constraintBottom_toTopOf="@+id/btnDHomeViewPatients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnDHomeRecords"
+        android:id="@+id/btnDHomeViewPatients"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="42dp"
         android:background="#A243B3"
-        android:text="My Patient's Record"
+        android:text="View Patients"
         android:textColor="#F7F3F3"
         android:textSize="18sp"
         android:textStyle="bold"

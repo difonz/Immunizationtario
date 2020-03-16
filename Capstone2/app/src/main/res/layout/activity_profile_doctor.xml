@@ -204,14 +204,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
-    <Button
+    <ImageView
         android:id="@+id/btnDProfileUpload"
-        android:layout_width="414dp"
+        android:layout_width="260dp"
         android:layout_height="165dp"
         android:background="#DD4E80"
         android:text="Upload Your Photo here"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfileTitle" />
+
+    <Button
+        android:id="@+id/btn_uploadDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:text="Upload Image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnDProfileUpload"
         app:layout_constraintTop_toBottomOf="@+id/txtDProfileTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

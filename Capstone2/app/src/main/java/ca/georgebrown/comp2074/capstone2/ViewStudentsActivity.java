@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,42 +16,42 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ViewMembersActivity extends AppCompatActivity {
+public class ViewStudentsActivity extends AppCompatActivity {
 
     private AccountViewModel accountViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_members);
+        setContentView(R.layout.activity_view_students);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         Long accID = sharedPref.getLong("id", 0);
 
         // set RecyclerView view and layout
-        RecyclerView recyclerView = findViewById(R.id.PMembersRecyclerView);
+        RecyclerView recyclerView = findViewById(R.id.ViewStudentsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // add the recyclerView list adapter and the onClick listener to the recycler view
-        final MemberListAdapter adapter = new MemberListAdapter(this);
+        final StudentListAdapter adapter = new StudentListAdapter(this);
         recyclerView.setAdapter(adapter);
 
         // get an instance of the accountViewModel
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
 
-        accountViewModel.getMembers(accID).observe(this, new Observer<List<MemberAccount>>() {
+        accountViewModel.getStudents(accID).observe(this, new Observer<List<StudentAccount>>() {
             @Override
-            public void onChanged(@Nullable final List<MemberAccount> members) {
-                // Update the cached copy of the members associated with this account in the adapter.
-                adapter.setMembers(members);
+            public void onChanged(@Nullable final List<StudentAccount> students) {
+                // Update the cached copy of the students associated with this account in the adapter.
+                adapter.setMembers(students);
             }
         });
 
-        Button btnBack = findViewById(R.id.btnViewMembersHome);
+        Button btnBack = findViewById(R.id.btnViewStudentsHome);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), home_personal.class);
+                Intent i = new Intent(v.getContext(), home_school.class);
                 startActivity(i);
                 finish();
             }

@@ -8,7 +8,7 @@
     tools:context=".VaccineInfoActivity">
 
     <Button
-        android:id="@+id/btnPHome"
+        android:id="@+id/btnVaccineInfoHome"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"

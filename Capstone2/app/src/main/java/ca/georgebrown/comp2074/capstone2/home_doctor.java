@@ -44,7 +44,7 @@ public class home_doctor extends AppCompatActivity {
         btnDocUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), DoctorUpdateActivity.class);
+                Intent i = new Intent(v.getContext(), AddVaccineActivity.class);
                 startActivity(i);
             }
         });
@@ -79,12 +79,12 @@ public class home_doctor extends AppCompatActivity {
             }
         });
 
-        Button btnPatientRecords = findViewById(R.id.btnDHomeRecords);
+        Button btnPatientRecords = findViewById(R.id.btnDHomeViewPatients);
         btnPatientRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(v.getContext(), PatientRecordsActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(v.getContext(), ViewPatientsActivity.class);
+                startActivity(i);
             }
         });
 

@@ -42,8 +42,8 @@ public class home_school extends AppCompatActivity {
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(v.getContext(), .class);
-                //startActivity(i);
+                Intent i = new Intent(v.getContext(), ViewStudentsActivity.class);
+                startActivity(i);
             }
         });
 

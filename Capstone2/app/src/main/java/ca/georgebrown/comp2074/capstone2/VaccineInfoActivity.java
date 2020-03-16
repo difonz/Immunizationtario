@@ -1,9 +1,13 @@
 package ca.georgebrown.comp2074.capstone2;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,12 +17,23 @@ public class VaccineInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccine__info);
 
-        Button btnHome = findViewById(R.id.btnPHome);
+        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        String accType = sharedPref.getString("accType", "personal");
+        Log.d("accType", accType);
+
+        Button btnHome = findViewById(R.id.btnVaccineInfoHome);
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), home_personal.class);
-                startActivity(i);
+                Intent intent;
+                if (accType.equals("school")) {
+                    intent = new Intent(v.getContext(), home_school.class);
+                } else if (accType.equals("doctor")) {
+                    intent = new Intent(v.getContext(), home_doctor.class);
+                } else {
+                    intent = new Intent(v.getContext(), home_personal.class);
+                }
+                startActivity(intent);
             }
         });
 

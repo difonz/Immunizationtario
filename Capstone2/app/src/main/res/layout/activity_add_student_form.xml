@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:ems="10"
-        android:inputType="date|none"
+        android:hint="dd/mm/yyyy"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText22"
         app:layout_constraintTop_toBottomOf="@+id/txtAddStudentName" />
@@ -31,17 +32,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txtAddStudentDob" />
 
     <EditText
-        android:id="@+id/txtAddStudentMemberID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:inputType="none|number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText23"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddStudentHC" />
-
-    <EditText
         android:id="@+id/txtAddStudentName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -51,22 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText21"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <EditText
-        android:id="@+id/editText13"
-        android:layout_width="137dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#91C6F1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Student ID :"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText23" />
 
     <Button
         android:id="@+id/btnSAddCancel"
@@ -165,14 +139,14 @@
         android:id="@+id/btnSAddADD"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:background="#00BCD4"
         android:text="ADD"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText13" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAddStudentHC" />
 
     <Button
         android:id="@+id/button30"

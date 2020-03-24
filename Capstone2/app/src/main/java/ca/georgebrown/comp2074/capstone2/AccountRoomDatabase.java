@@ -14,8 +14,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Database(entities = {PersonalAccount.class, DoctorAccount.class, SchoolAccount.class, Immunization.class, Immunization_User.class,
-        MemberAccount.class, PatientAccount.class, StudentAccount.class},
-        version = 3, exportSchema = false)
+        MemberAccount.class},
+        version = 4, exportSchema = false)
 public abstract class AccountRoomDatabase extends RoomDatabase {
 
     public abstract AccountDAO accountDAO();
@@ -30,7 +30,7 @@ public abstract class AccountRoomDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AccountRoomDatabase.class, "account_database")
                             .allowMainThreadQueries()
-                            .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
+                            .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
                             .build();
                 }
             }
@@ -72,6 +72,24 @@ public abstract class AccountRoomDatabase extends RoomDatabase {
                     "`name` TEXT NOT NULL," +
                     "`dob` TEXT," +
                     "`healthCard` TEXT," +
+                    "`schoolID` INTEGER NOT NULL)");
+        }
+    };
+
+    // added doctorID and schoolID to member table, removed patient and student tables
+    static final Migration MIGRATION_3_4 = new Migration(3, 4) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("DROP TABLE patient_table");
+            database.execSQL("DROP TABLE student_table");
+            database.execSQL("DROP TABLE member_table");
+            database.execSQL("CREATE TABLE `member_table` (" +
+                    "`id` INTEGER PRIMARY KEY NOT NULL," +
+                    "`name` TEXT NOT NULL," +
+                    "`dob` TEXT," +
+                    "`healthCard` TEXT," +
+                    "`accountID` INTEGER NOT NULL," +
+                    "`doctorID` INTEGER NOT NULL," +
                     "`schoolID` INTEGER NOT NULL)");
         }
     };

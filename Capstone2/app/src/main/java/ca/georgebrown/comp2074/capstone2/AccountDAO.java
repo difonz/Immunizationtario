@@ -31,16 +31,16 @@ public interface AccountDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     long insertImmunizationUser(Immunization_User immunization_user);
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    long insertPatient(PatientAccount patientAccount);
-
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    long insertStudent(StudentAccount studentAccount);
-
     // GETS
 
     @Query("SELECT * FROM member_table WHERE accountID = :id ORDER BY NAME ASC")
-    LiveData<List<MemberAccount>> getMembers(long id);
+    LiveData<List<MemberAccount>> getMembersByAccID(long id);
+
+    @Query("SELECT * FROM member_table WHERE doctorID = :id ORDER BY NAME ASC")
+    LiveData<List<MemberAccount>> getMembersByDocID(long id);
+
+    @Query("SELECT * FROM member_table WHERE schoolID = :id ORDER BY NAME ASC")
+    LiveData<List<MemberAccount>> getMembersBySchoolID(long id);
 
     @Query("SELECT * FROM member_table")
     LiveData<List<MemberAccount>> getMemberAccounts();
@@ -84,18 +84,6 @@ public interface AccountDAO {
     @Query("SELECT * FROM school_table WHERE email = :email")
     SchoolAccount getSchoolByEmail(String email);
 
-    @Query("SELECT * FROM patient_table WHERE doctorID = :doctorID")
-    LiveData<List<PatientAccount>> getPatients(long doctorID);
-
-    @Query("SELECT * FROM student_table WHERE schoolID = :schoolID")
-    LiveData<List<StudentAccount>> getStudents(long schoolID);
-
-    @Query("SELECT * FROM patient_table WHERE id = :id")
-    PatientAccount getPatientById(long id);
-
-    @Query("SELECT * FROM student_table WHERE id = :id")
-    StudentAccount getStudentById(long id);
-
     // UPDATES
 
     @Query("UPDATE personal_table SET doctorID = :doctorID WHERE id = :id")
@@ -103,6 +91,12 @@ public interface AccountDAO {
 
     @Query("UPDATE personal_table SET schoolID = :schoolID WHERE id = :id")
     void updatePersonalSchool(long id, long schoolID);
+
+    @Query("UPDATE member_table SET doctorID = :doctorID WHERE healthCard = :healthCard")
+    void updateMemberDoctor(String healthCard, long doctorID);
+
+    @Query("UPDATE member_table SET schoolID = :schoolID WHERE healthCard = :healthCard")
+    void updateMemberSchool(String healthCard, long schoolID);
 
 
     /* DELETES

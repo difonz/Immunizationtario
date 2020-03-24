@@ -30,12 +30,20 @@ public class MemberAccount {
     @ColumnInfo(name = "accountID")
     private long accountID;
 
+    @ColumnInfo(name = "doctorID")
+    private long doctorID;
+
+    @ColumnInfo(name = "schoolID")
+    private long schoolID;
+
 
     public MemberAccount(String name, String dob, String healthCard, long accountID) {
         this.name = name;
         this.dob = dob;
         this.healthCard = healthCard;
         this.accountID = accountID;
+        this.doctorID = 0;
+        this.schoolID = 0;
     }
 
     public long getId() {
@@ -57,6 +65,10 @@ public class MemberAccount {
 
     public long getAccountID() { return this.accountID; }
 
+    public long getDoctorID() { return this.doctorID; }
+
+    public long getSchoolID() { return this.schoolID; }
+
     public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
@@ -72,5 +84,9 @@ public class MemberAccount {
     }
 
     public void setAccountID(long newAccId) { this.accountID = newAccId; }
+
+    public void setDoctorID(long newDocId) { this.doctorID = newDocId; }
+
+    public void setSchoolID(long newSchoolId) { this.schoolID = newSchoolId; }
 
 }

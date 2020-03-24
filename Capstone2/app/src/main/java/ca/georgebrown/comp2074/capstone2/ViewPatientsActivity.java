@@ -26,24 +26,24 @@ public class ViewPatientsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_patients);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long accID = sharedPref.getLong("id", 0);
+        Long docID = sharedPref.getLong("id", 0);
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.ViewPatientsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // add the recyclerView list adapter and the onClick listener to the recycler view
-        final PatientListAdapter adapter = new PatientListAdapter(this);
+        final MemberListAdapter adapter = new MemberListAdapter(this);
         recyclerView.setAdapter(adapter);
 
         // get an instance of the accountViewModel
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
 
-        accountViewModel.getPatients(accID).observe(this, new Observer<List<PatientAccount>>() {
+        accountViewModel.getMembersByDocID(docID).observe(this, new Observer<List<MemberAccount>>() {
             @Override
-            public void onChanged(@Nullable final List<PatientAccount> patients) {
+            public void onChanged(@Nullable final List<MemberAccount> members) {
                 // Update the cached copy of the patients associated with this account in the adapter.
-                adapter.setMembers(patients);
+                adapter.setMembers(members);
             }
         });
 

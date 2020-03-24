@@ -56,16 +56,16 @@ public class AccountViewModel extends AndroidViewModel {
         return allImmunizations;
     }
 
-    LiveData<List<MemberAccount>> getMembers(long id) {
-        return mRepository.getMembers(id);
+    LiveData<List<MemberAccount>> getMembersByAccID(long id) {
+        return mRepository.getMembersByAccID(id);
     }
 
-    LiveData<List<PatientAccount>> getPatients(long doctorID) {
-        return mRepository.getPatients(doctorID);
+    LiveData<List<MemberAccount>> getMembersByDocID(long id) {
+        return mRepository.getMembersByDocID(id);
     }
 
-    LiveData<List<StudentAccount>> getStudents(long schoolID) {
-        return mRepository.getStudents(schoolID);
+    LiveData<List<MemberAccount>> getMembersBySchoolID(long id) {
+        return mRepository.getMembersBySchoolID(id);
     }
 
     LiveData<List<Immunization_User>> getUserImmunizations(long userID) {
@@ -107,20 +107,6 @@ public class AccountViewModel extends AndroidViewModel {
         return memberAccountLiveData;
     }
 
-    PatientAccount getPatientById(long id) {
-        if (patientAccountLiveData == null) {
-            patientAccountLiveData = mRepository.getPatientById(id);
-        }
-        return patientAccountLiveData;
-    }
-
-    StudentAccount getStudentById(long id) {
-        if (studentAccountLiveData == null) {
-            studentAccountLiveData = mRepository.getStudentById(id);
-        }
-        return studentAccountLiveData;
-    }
-
     PersonalAccount getPersonalByEmail(String email) {
         if (personalAccountLiveData == null) {
             personalAccountLiveData = mRepository.getPersonalByEmail(email);
@@ -160,14 +146,6 @@ public class AccountViewModel extends AndroidViewModel {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertMember(ma); });
     }
 
-    void insertPatient(PatientAccount pa) {
-        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertPatient(pa); });
-    }
-
-    void insertStudent(StudentAccount sa) {
-        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertStudent(sa); });
-    }
-
     void insertImmunization(Immunization imm) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.insertImmunization(imm); });
     }
@@ -182,5 +160,13 @@ public class AccountViewModel extends AndroidViewModel {
 
     void updatePersonalSchool(int id, int schoolID) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.updatePersonalSchool(id, schoolID); });
+    }
+
+    void updateMemberDoctor(String healthCard, long doctorID) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.updateMemberDoctor(healthCard, doctorID); });
+    }
+
+    void updateMemberSchool(String healthCard, long schoolID) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.updateMemberSchool(healthCard, schoolID); });
     }
 }

@@ -26,10 +26,10 @@ public class AddStudentForm extends AppCompatActivity {
         setContentView(R.layout.activity_add_student_form);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long accID = sharedPref.getLong("id", 0);
+        Long schoolID = sharedPref.getLong("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        final SchoolAccount sa = accountViewModel.getSchoolById(accID);
+        final SchoolAccount sa = accountViewModel.getSchoolById(schoolID);
 
         EditText txtName = findViewById(R.id.txtAddStudentName);
         EditText txtDOB = findViewById(R.id.txtAddStudentDob);
@@ -55,8 +55,9 @@ public class AddStudentForm extends AppCompatActivity {
                 String hc = txtHealthCard.getText().toString();
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dob) && !TextUtils.isEmpty(hc)) {
                     if (accountViewModel.getMemberByHC(hc) != null) {
-                        StudentAccount student = new StudentAccount(name, dob, hc, accID);
-                        accountViewModel.insertStudent(student);
+                        //StudentAccount student = new StudentAccount(name, dob, hc, schoolID);
+                        //accountViewModel.insertStudent(student);
+                        accountViewModel.updateMemberSchool(hc, schoolID);
                         Toast.makeText(AddStudentForm.this, "Student added to your account", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(v.getContext(), home_school.class);
                         startActivity(i);

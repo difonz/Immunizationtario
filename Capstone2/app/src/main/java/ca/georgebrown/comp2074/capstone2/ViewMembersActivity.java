@@ -40,7 +40,7 @@ public class ViewMembersActivity extends AppCompatActivity {
         // get an instance of the accountViewModel
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
 
-        accountViewModel.getMembers(accID).observe(this, new Observer<List<MemberAccount>>() {
+        accountViewModel.getMembersByAccID(accID).observe(this, new Observer<List<MemberAccount>>() {
             @Override
             public void onChanged(@Nullable final List<MemberAccount> members) {
                 // Update the cached copy of the members associated with this account in the adapter.

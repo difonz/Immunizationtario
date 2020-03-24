@@ -26,10 +26,10 @@ public class AddPatientForm extends AppCompatActivity {
         setContentView(R.layout.activity_add_patient_form);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long accID = sharedPref.getLong("id", 0);
+        Long docID = sharedPref.getLong("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        final DoctorAccount da = accountViewModel.getDoctorById(accID);
+        final DoctorAccount da = accountViewModel.getDoctorById(docID);
 
         EditText txtName = findViewById(R.id.txtAddPatientName);
         EditText txtDOB = findViewById(R.id.txtAddPatientDob);
@@ -55,8 +55,9 @@ public class AddPatientForm extends AppCompatActivity {
                 String hc = txtHealthCard.getText().toString();
                 if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dob) && !TextUtils.isEmpty(hc)) {
                     if (accountViewModel.getMemberByHC(hc) != null) {
-                        PatientAccount pa = new PatientAccount(name, dob, hc, accID);
-                        accountViewModel.insertPatient(pa);
+                        //PatientAccount pa = new PatientAccount(name, dob, hc, schoolID);
+                        //accountViewModel.insertPatient(pa);
+                        accountViewModel.updateMemberDoctor(hc, docID);
                         Toast.makeText(AddPatientForm.this, "Patient added to your account", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(v.getContext(), home_doctor.class);
                         startActivity(i);

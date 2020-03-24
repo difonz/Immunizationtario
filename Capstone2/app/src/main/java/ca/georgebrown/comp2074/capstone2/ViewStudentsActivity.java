@@ -26,24 +26,24 @@ public class ViewStudentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_students);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long accID = sharedPref.getLong("id", 0);
+        Long schoolID = sharedPref.getLong("id", 0);
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.ViewStudentsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // add the recyclerView list adapter and the onClick listener to the recycler view
-        final StudentListAdapter adapter = new StudentListAdapter(this);
+        final MemberListAdapter adapter = new MemberListAdapter(this);
         recyclerView.setAdapter(adapter);
 
         // get an instance of the accountViewModel
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
 
-        accountViewModel.getStudents(accID).observe(this, new Observer<List<StudentAccount>>() {
+        accountViewModel.getMembersBySchoolID(schoolID).observe(this, new Observer<List<MemberAccount>>() {
             @Override
-            public void onChanged(@Nullable final List<StudentAccount> students) {
+            public void onChanged(@Nullable final List<MemberAccount> members) {
                 // Update the cached copy of the students associated with this account in the adapter.
-                adapter.setMembers(students);
+                adapter.setMembers(members);
             }
         });
 

@@ -61,7 +61,7 @@ public class MemberListAdapter extends RecyclerView.Adapter<MemberListAdapter.Me
 
         } else {
             // Covers the case of data not being ready yet.
-            holder.accountItemView.setText("There are no family members associated with this account!");
+            holder.accountItemView.setText("There are no members associated with this account!");
         }
     }
 

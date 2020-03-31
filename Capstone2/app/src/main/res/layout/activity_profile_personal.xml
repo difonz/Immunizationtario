@@ -4,8 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F8E8"
+    android:background="@android:drawable/alert_light_frame"
     tools:context=".PersonalProfileActivity">
+
+    <EditText
+        android:id="@+id/editText38"
+        android:layout_width="419dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#056960"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtPProfileHC"
@@ -37,7 +56,7 @@
         android:id="@+id/btnPProfileUpload"
         android:layout_width="260dp"
         android:layout_height="165dp"
-        android:background="#E99EB8"
+        android:background="@android:drawable/alert_light_frame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPProfileTitle" />
 
@@ -89,31 +108,16 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="48dp"
-        android:background="#158B18"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="Back to Home"
+        android:textColor="#085C0C"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="416dp"
-        android:layout_height="73dp"
-        android:background="#F1E786"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
@@ -123,7 +127,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone: "
@@ -140,7 +144,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="OHIP Card No:"
@@ -159,7 +163,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="32dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Full Name :"
@@ -176,7 +180,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email: "
@@ -193,7 +197,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Date of Birth: "
@@ -205,19 +209,21 @@
 
     <EditText
         android:id="@+id/txtPProfileTitle"
-        android:layout_width="414dp"
-        android:layout_height="57dp"
-        android:background="#158B18"
+        android:layout_width="383dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/panelBackground"
         android:ems="10"
+        android:fontFamily="casual"
         android:inputType="textPersonName"
         android:text="   My Profile"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FFFFFF"
+        android:textColor="#05790A"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText38" />
 
     <Button
         android:id="@+id/btn_uploadPerson"

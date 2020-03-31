@@ -5,12 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:drawable/alert_light_frame"
-    tools:context=".VaccineRecordActivity">
-
+    tools:context=".View_record">
 
     <EditText
-        android:id="@+id/editText40"
-        android:layout_width="402dp"
+        android:id="@+id/editText42"
+        android:layout_width="408dp"
         android:layout_height="67dp"
         android:layout_marginBottom="32dp"
         android:background="#F8F3C4"
@@ -18,34 +17,24 @@
         android:fontFamily="@font/courgette"
         android:inputType="textPersonName"
         android:text="   ImmunizatiOntario"
-        android:textColor="#056960"
+        android:textColor="#3F51B5"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/VRecordRecyclerView"
-        android:layout_width="351dp"
-        android:layout_height="444dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVRecordBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/VRecordTitle"
-        tools:listitem="@layout/recyclerview_item" />
-
     <Button
-        android:id="@+id/btnVRecordBack"
-        android:layout_width="383dp"
-        android:layout_height="68dp"
+        android:id="@+id/btnViewRecordHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="42dp"
-        android:background="@android:drawable/alert_light_frame"
+        android:background="@android:drawable/btn_default"
         android:fontFamily="serif"
-        android:text="Back To List"
-        android:textColor="#125535"
+        android:text="Back to Record List"
+        android:textColor="#142174"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,20 +42,31 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <TextView
-        android:id="@+id/VRecordTitle"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/aclonica"
-        android:text="Vaccine Record"
+        android:text="Immunization Record"
         android:textColor="#131212"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText40" />
+        app:layout_constraintTop_toBottomOf="@+id/editText42" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/PMembersRecyclerView"
+        android:layout_width="363dp"
+        android:layout_height="431dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewRecordHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.458" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

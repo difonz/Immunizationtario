@@ -4,9 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6F5F7"
+    android:background="@android:drawable/alert_light_frame"
     tools:context=".AddStudentForm">
 
+
+    <EditText
+        android:id="@+id/editText30"
+        android:layout_width="398dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#3F51B5"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtAddStudentDob"
@@ -46,7 +65,8 @@
         android:id="@+id/btnSAddCancel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#00BCD4"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="@android:string/cancel"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -63,7 +83,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="20dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Date of Birth :"
@@ -73,35 +93,19 @@
         app:layout_constraintTop_toBottomOf="@+id/editText21" />
 
 
-    <EditText
-        android:id="@+id/editText19"
-        android:layout_width="416dp"
-        android:layout_height="73dp"
-        android:background="#F1E786"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/aclonica"
         android:text="Add New Student"
         android:textColor="#131213"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText19" />
+        app:layout_constraintTop_toBottomOf="@+id/editText30" />
 
     <EditText
         android:id="@+id/editText21"
@@ -110,7 +114,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="20dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Full Name :"
@@ -126,7 +130,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="20dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="OHIP #:"
@@ -140,8 +144,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:background="#00BCD4"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="ADD"
+        android:textColor="#064272"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

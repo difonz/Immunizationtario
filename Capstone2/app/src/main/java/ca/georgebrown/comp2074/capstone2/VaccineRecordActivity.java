@@ -1,13 +1,10 @@
 package ca.georgebrown.comp2074.capstone2;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -28,15 +25,13 @@ public class VaccineRecordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccine_record);
 
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        String accType = sharedPref.getString("accType", "personal");
-        Log.d("accType", accType);
+        //SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        //String accType = sharedPref.getString("accType", "personal");
 
         Intent i = getIntent();
         long memberID = i.getLongExtra("memberID", 0);
-        //MemberAccount member = accountViewModel.getMemberById(memberID);
-        TextView title = findViewById(R.id.VRecordTitle);
-        //title.setText("Vaccine Record for " + member.getName());
+        String accType = i.getStringExtra("accType");
+        Log.d("accType", "" + accType); // personal, doctor, or school
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.VRecordRecyclerView);
@@ -49,6 +44,10 @@ public class VaccineRecordActivity extends AppCompatActivity {
         // get an instance of the accountViewModel
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
 
+        MemberAccount member = accountViewModel.getMemberById(memberID);
+        TextView title = findViewById(R.id.VRecordTitle);
+        title.setText("Vaccine Record for " + member.getName());
+
         accountViewModel.getUserImmunizations(memberID).observe(this, new Observer<List<Immunization_User>>() {
             @Override
             public void onChanged(@Nullable final List<Immunization_User> user_immunizations) {
@@ -57,16 +56,27 @@ public class VaccineRecordActivity extends AppCompatActivity {
             }
         });
 
+        Button btnCalendar = findViewById(R.id.btnVRecordCalendar);
+        btnCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), CalendarActivity.class);
+                i.putExtra("memberID", memberID);
+                startActivity(i);
+            }
+        });
+
         Button btnBack = findViewById(R.id.btnVRecordBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent;
+                // send back to the appropriate View activity, since all 3 account types redirect to this one activity
                 if (accType.equals("school")) {
                     intent = new Intent(v.getContext(), ViewStudentsActivity.class);
                 } else if (accType.equals("doctor")) {
                     intent = new Intent(v.getContext(), ViewPatientsActivity.class);
-                } else {
+                } else { // accType.equals("personal")
                     intent = new Intent(v.getContext(), ViewMembersActivity.class);
                 }
                 startActivity(intent);

@@ -8,6 +8,22 @@
     tools:context=".VaccineRecordActivity">
 
 
+    <Button
+        android:id="@+id/btnVRecordBack"
+        android:layout_width="383dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="serif"
+        android:text="Back To List"
+        android:textColor="#125535"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVRecordCalendar" />
+
     <EditText
         android:id="@+id/editText40"
         android:layout_width="402dp"
@@ -31,27 +47,26 @@
         android:id="@+id/VRecordRecyclerView"
         android:layout_width="351dp"
         android:layout_height="444dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVRecordBack"
+        app:layout_constraintBottom_toTopOf="@+id/btnVRecordCalendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/VRecordTitle"
         tools:listitem="@layout/recyclerview_item" />
 
     <Button
-        android:id="@+id/btnVRecordBack"
+        android:id="@+id/btnVRecordCalendar"
         android:layout_width="383dp"
         android:layout_height="68dp"
-        android:layout_marginBottom="42dp"
         android:background="@android:drawable/alert_light_frame"
         android:fontFamily="serif"
-        android:text="Back To List"
+        android:text="View Member's Calendar"
         android:textColor="#125535"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnVRecordBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VRecordRecyclerView" />
 
     <TextView
         android:id="@+id/VRecordTitle"

@@ -26,11 +26,12 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if(position != RecyclerView.NO_POSITION){
-                        PatientAccount patientAccount = patientAccountList.get(position);
+                        MemberAccount patientAccount = patientAccountList.get(position);
                         Toast.makeText(v.getContext(), "You selected " + patientAccount.getName(), Toast.LENGTH_SHORT).show();
                         // open the vaccine record page for the clicked family member
                         Intent i = new Intent(v.getContext(), VaccineRecordActivity.class);
-                        i.putExtra("patientID", patientAccount.getId());
+                        i.putExtra("memberID", patientAccount.getId());
+                        i.putExtra("accType", "doctor");
                         v.getContext().startActivity(i);
                     }
                 }
@@ -39,7 +40,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     }
 
     private final LayoutInflater mInflater;
-    private List<PatientAccount> patientAccountList; // Cached copy of patient associated with this account
+    private List<MemberAccount> patientAccountList; // Cached copy of patients associated with this doctor account
 
     PatientListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -55,7 +56,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     @Override
     public void onBindViewHolder(PatientViewHolder holder, int position) {
         if (patientAccountList != null) {
-            PatientAccount currentPatient = patientAccountList.get(position);
+            MemberAccount currentPatient = patientAccountList.get(position);
             holder.accountItemView.setText(currentPatient.getName() + "\nHealth Card: " + currentPatient.getHealthCard());
 
         } else {
@@ -64,7 +65,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         }
     }
 
-    void setMembers(List<PatientAccount> patientAccounts){
+    void setMembers(List<MemberAccount> patientAccounts){
         patientAccountList = patientAccounts;
         notifyDataSetChanged();
     }

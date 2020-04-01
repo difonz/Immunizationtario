@@ -57,6 +57,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("accType", "personal");
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_personal.class);
+                                intent.putExtra("email", pa.getEmail());
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -76,6 +77,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("accType", "doctor");
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_doctor.class);
+                                intent.putExtra("email", da.getEmail());
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -95,6 +97,7 @@ public class Login extends AppCompatActivity {
                                 editor.putString("accType", "school");
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_school.class);
+                                intent.putExtra("email", sa.getEmail());
                                 startActivity(intent);
                                 finish();
                             } else {

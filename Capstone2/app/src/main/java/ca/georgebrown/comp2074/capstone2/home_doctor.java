@@ -18,6 +18,9 @@ public class home_doctor extends AppCompatActivity {
 
         final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
+        Intent i = getIntent();
+        String email = i.getStringExtra("email");
+
         // Navigation bar buttons
         Button btnDocHome = findViewById(R.id.btnDocHome);
         Button btnDocProfile = findViewById(R.id.btnDocProfile);
@@ -37,6 +40,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), DoctorProfileActivity.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });

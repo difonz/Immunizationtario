@@ -18,6 +18,9 @@ public class home_school extends AppCompatActivity {
 
         final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
+        Intent i = getIntent();
+        String email = i.getStringExtra("email");
+
         Button btnHome = findViewById(R.id.btnSHome);
         Button btnProfile = findViewById(R.id.btnSHomeProfile);
         Button btnView = findViewById(R.id.btnSHomeRecords);
@@ -35,6 +38,7 @@ public class home_school extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), SchoolProfileActivity.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });

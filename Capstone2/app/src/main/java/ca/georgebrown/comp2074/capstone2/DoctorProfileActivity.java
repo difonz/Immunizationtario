@@ -29,7 +29,9 @@ public class DoctorProfileActivity extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_profile_doctor);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        String email = sharedPref.getString("email", "");
+        // String email = sharedPref.getString("email", "");
+        Intent i = getIntent();
+        String email = i.getStringExtra("email");
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         DoctorAccount da = accountViewModel.getDoctorByEmail(email);

@@ -107,20 +107,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
     <Button
-        android:id="@+id/btnPHomeCalendar"
-        android:layout_width="81dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="4dp"
-        android:background="@android:drawable/alert_light_frame"
-        android:fontFamily="@font/allan"
-        android:text="Calendar"
-        android:textColor="#0A740F"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/btnPHomeLogout"
-        app:layout_constraintStart_toEndOf="@+id/btnPHomeMap"
-        app:layout_constraintTop_toBottomOf="@+id/editText35" />
-
-    <Button
         android:id="@+id/btnPHomeMap"
         android:layout_width="81dp"
         android:layout_height="72dp"
@@ -130,7 +116,7 @@
         android:text="Map"
         android:textColor="#0A740F"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/btnPHomeCalendar"
+        app:layout_constraintEnd_toStartOf="@+id/btnPHomeLogout"
         app:layout_constraintStart_toEndOf="@+id/btnPHomeProfile"
         app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
@@ -145,7 +131,7 @@
         android:textColor="#0A740F"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnPHomeCalendar"
+        app:layout_constraintStart_toEndOf="@+id/btnPHomeMap"
         app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
     <Button

@@ -19,14 +19,17 @@ public class home_personal extends AppCompatActivity {
         setContentView(R.layout.activity_home_personal);
 
         final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-
         Log.d("accountEmail", sharedPref.getString("email", ""));
+
+        Intent i = getIntent();
+        String email = i.getStringExtra("email"); // gets intent from Login, won't work coming from another page
 
         Button btnProfile = findViewById(R.id.btnPHomeProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), PersonalProfileActivity.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });
@@ -40,15 +43,6 @@ public class home_personal extends AppCompatActivity {
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapsIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
-            }
-        });
-
-        Button btnCalendar = findViewById(R.id.btnPHomeCalendar);
-        btnCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), CalendarActivity.class);
-                startActivity(i);
             }
         });
 

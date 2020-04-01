@@ -32,8 +32,11 @@ public class PersonalProfileActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_profile_personal);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        String email = sharedPref.getString("email", "abc@gmail.com");
-        Log.d("personal_profile_email", email);
+        //String email = sharedPref.getString("email", "abc@gmail.com");
+        Log.d("personal_profile_email", sharedPref.getString("email", "abc@gmail.com"));
+
+        Intent i = getIntent();
+        String email = i.getStringExtra("email");
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         PersonalAccount pa = accountViewModel.getPersonalByEmail(email);
@@ -61,7 +64,6 @@ public class PersonalProfileActivity extends AppCompatActivity implements View.O
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("personal_profile_email", email);
                 Intent i = new Intent(v.getContext(), home_personal.class);
                 startActivity(i);
             }

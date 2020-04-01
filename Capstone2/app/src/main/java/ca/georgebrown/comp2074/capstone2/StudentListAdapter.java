@@ -26,11 +26,12 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     if(position != RecyclerView.NO_POSITION){
-                        StudentAccount currentStudent = studentAccountList.get(position);
+                        MemberAccount currentStudent = studentAccountList.get(position);
                         Toast.makeText(v.getContext(), "You selected " + currentStudent.getName(), Toast.LENGTH_SHORT).show();
                         // open the vaccine record page for the clicked student
                         Intent i = new Intent(v.getContext(), VaccineRecordActivity.class);
                         i.putExtra("studentID", currentStudent.getId());
+                        i.putExtra("accType", "school");
                         v.getContext().startActivity(i);
                     }
                 }
@@ -39,7 +40,7 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
     }
 
     private final LayoutInflater mInflater;
-    private List<StudentAccount> studentAccountList; // Cached copy of students associated with this account
+    private List<MemberAccount> studentAccountList; // Cached copy of students associated with this account
 
     StudentListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -55,7 +56,7 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
     @Override
     public void onBindViewHolder(StudentViewHolder holder, int position) {
         if (studentAccountList != null) {
-            StudentAccount currentStudent = studentAccountList.get(position);
+            MemberAccount currentStudent = studentAccountList.get(position);
             holder.accountItemView.setText(currentStudent.getName() + "\nHealth Card: " + currentStudent.getHealthCard());
 
         } else {
@@ -64,7 +65,7 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
         }
     }
 
-    void setMembers(List<StudentAccount> students){
+    void setMembers(List<MemberAccount> students){
         studentAccountList = students;
         notifyDataSetChanged();
     }

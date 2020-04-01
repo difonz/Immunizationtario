@@ -33,7 +33,7 @@ public class ViewStudentsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // add the recyclerView list adapter and the onClick listener to the recycler view
-        final MemberListAdapter adapter = new MemberListAdapter(this);
+        final StudentListAdapter adapter = new StudentListAdapter(this);
         recyclerView.setAdapter(adapter);
 
         // get an instance of the accountViewModel

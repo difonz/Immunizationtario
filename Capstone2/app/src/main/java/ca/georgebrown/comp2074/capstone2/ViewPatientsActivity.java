@@ -26,7 +26,9 @@ public class ViewPatientsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_patients);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long docID = sharedPref.getLong("id", 0);
+        // Long docID = sharedPref.getLong("id", 0);
+        Intent i = getIntent();
+        long docID = i.getLongExtra("id", 0);
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.ViewPatientsRecyclerView);
@@ -52,6 +54,7 @@ public class ViewPatientsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_doctor.class);
+                i.putExtra("id", docID);
                 startActivity(i);
                 finish();
             }

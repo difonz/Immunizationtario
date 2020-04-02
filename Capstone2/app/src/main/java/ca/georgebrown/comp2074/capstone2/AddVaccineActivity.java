@@ -26,9 +26,11 @@ public class AddVaccineActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         Long accID = sharedPref.getLong("id", 0);
         Log.d("accID_add_vaccine", accID.toString());
+        Intent i = getIntent();
+        long docID = i.getLongExtra("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
-        DoctorAccount da = accountViewModel.getDoctorById(accID);
+        DoctorAccount da = accountViewModel.getDoctorById(docID);
 
         //String email = sharedPref.getString("email", "abc@gmail.com");
         //Log.d("personal_profile_email", email);
@@ -43,13 +45,14 @@ public class AddVaccineActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_doctor.class);
+                i.putExtra("id", docID);
                 startActivity(i);
                 finish();
             }
         });
 
-        Button btnAddNewMember = findViewById(R.id.btnVAddADD);
-        btnAddNewMember.setOnClickListener(new View.OnClickListener() {
+        Button btnAddVaccine = findViewById(R.id.btnVAddADD);
+        btnAddVaccine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // create the new member and add into the database
@@ -62,6 +65,7 @@ public class AddVaccineActivity extends AppCompatActivity {
                     accountViewModel.insertImmunizationUser(iu);
                     Toast.makeText(AddVaccineActivity.this, "Vaccine added to patient's record", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(v.getContext(), home_doctor.class);
+                    i.putExtra("id", docID);
                     startActivity(i);
                     finish();
                 } else {

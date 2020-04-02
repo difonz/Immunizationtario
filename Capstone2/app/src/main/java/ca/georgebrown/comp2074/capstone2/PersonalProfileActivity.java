@@ -37,6 +37,7 @@ public class PersonalProfileActivity extends AppCompatActivity implements View.O
 
         Intent i = getIntent();
         String email = i.getStringExtra("email");
+        long id = i.getLongExtra("id",0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         PersonalAccount pa = accountViewModel.getPersonalByEmail(email);
@@ -65,7 +66,10 @@ public class PersonalProfileActivity extends AppCompatActivity implements View.O
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_personal.class);
+                i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
 

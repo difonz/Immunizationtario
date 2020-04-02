@@ -26,7 +26,9 @@ public class ViewStudentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_students);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long schoolID = sharedPref.getLong("id", 0);
+        // Long schoolID = sharedPref.getLong("id", 0);
+        Intent i = getIntent();
+        long schoolID = i.getLongExtra("id", 0);
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.ViewStudentsRecyclerView);
@@ -52,6 +54,7 @@ public class ViewStudentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_school.class);
+                i.putExtra("id", schoolID);
                 startActivity(i);
                 finish();
             }

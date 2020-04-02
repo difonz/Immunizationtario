@@ -32,6 +32,7 @@ public class DoctorProfileActivity extends AppCompatActivity implements View.OnC
         // String email = sharedPref.getString("email", "");
         Intent i = getIntent();
         String email = i.getStringExtra("email");
+        long id = i.getLongExtra("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         DoctorAccount da = accountViewModel.getDoctorByEmail(email);
@@ -60,7 +61,10 @@ public class DoctorProfileActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_doctor.class);
+                i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
         // to upload image

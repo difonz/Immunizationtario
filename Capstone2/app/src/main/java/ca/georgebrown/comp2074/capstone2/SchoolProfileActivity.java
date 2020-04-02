@@ -32,6 +32,7 @@ public class SchoolProfileActivity extends AppCompatActivity implements View.OnC
         // String email = sharedPref.getString("email", "");
         Intent i = getIntent();
         String email = i.getStringExtra("email");
+        long id = i.getLongExtra("id",0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         SchoolAccount sa = accountViewModel.getSchoolByEmail(email);
@@ -63,6 +64,8 @@ public class SchoolProfileActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_school.class);
                 startActivity(i);
+                i.putExtra("email", email);
+                i.putExtra("id", id);
                 finish();
             }
         });

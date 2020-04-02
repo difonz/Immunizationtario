@@ -31,6 +31,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
                         // open the vaccine record page for the clicked family member
                         Intent i = new Intent(v.getContext(), VaccineRecordActivity.class);
                         i.putExtra("memberID", patientAccount.getId());
+                        i.putExtra("docID", patientAccount.getDoctorID());
                         i.putExtra("accType", "doctor");
                         v.getContext().startActivity(i);
                     }

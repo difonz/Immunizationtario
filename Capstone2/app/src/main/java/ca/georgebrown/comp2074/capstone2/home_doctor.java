@@ -20,6 +20,7 @@ public class home_doctor extends AppCompatActivity {
 
         Intent i = getIntent();
         String email = i.getStringExtra("email");
+        Long id = i.getLongExtra("id", 0);
 
         // Navigation bar buttons
         Button btnDocHome = findViewById(R.id.btnDocHome);
@@ -32,6 +33,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_doctor.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -49,6 +51,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), AddVaccineActivity.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -57,6 +60,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), View_doctor.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -79,6 +83,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), AddPatientForm.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -88,6 +93,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), ViewPatientsActivity.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -97,6 +103,8 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), VaccineInfoActivity.class);
+                i.putExtra("accType", "doctor");
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

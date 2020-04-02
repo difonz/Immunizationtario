@@ -28,37 +28,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtAddStudentDob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:hint="dd/mm/yyyy"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText22"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddStudentName" />
-
-    <EditText
         android:id="@+id/txtAddStudentHC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="64dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnSAddADD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText23"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddStudentDob" />
-
-    <EditText
-        android:id="@+id/txtAddStudentName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText21"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
@@ -76,22 +54,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button30" />
 
-    <EditText
-        android:id="@+id/editText22"
-        android:layout_width="137dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#D4E5F1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Date of Birth :"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText21" />
-
 
     <TextView
         android:id="@+id/textView6"
@@ -108,36 +70,20 @@
         app:layout_constraintTop_toBottomOf="@+id/editText30" />
 
     <EditText
-        android:id="@+id/editText21"
-        android:layout_width="137dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#D4E5F1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Full Name :"
-        android:textSize="19sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <EditText
         android:id="@+id/editText23"
         android:layout_width="137dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
         android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="OHIP #:"
         android:textSize="19sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSAddADD"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText22" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <Button
         android:id="@+id/btnSAddADD"

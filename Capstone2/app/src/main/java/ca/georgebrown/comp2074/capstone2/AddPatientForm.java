@@ -26,13 +26,13 @@ public class AddPatientForm extends AppCompatActivity {
         setContentView(R.layout.activity_add_patient_form);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long docID = sharedPref.getLong("id", 0);
+        // Long docID = sharedPref.getLong("id", 0);
+        Intent i = getIntent();
+        long docID = i.getLongExtra("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         final DoctorAccount da = accountViewModel.getDoctorById(docID);
 
-        EditText txtName = findViewById(R.id.txtAddPatientName);
-        EditText txtDOB = findViewById(R.id.txtAddPatientDob);
         EditText txtHealthCard = findViewById(R.id.txtAddPatientHC);
 
         Button btnCancel = findViewById(R.id.btnDAddCancel);
@@ -40,6 +40,7 @@ public class AddPatientForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_doctor.class);
+                i.putExtra("id", docID);
                 startActivity(i);
                 finish();
             }
@@ -50,23 +51,22 @@ public class AddPatientForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // create the new patient and add into the database
-                String name = txtName.getText().toString();
-                String dob = txtDOB.getText().toString();
                 String hc = txtHealthCard.getText().toString();
-                if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(dob) && !TextUtils.isEmpty(hc)) {
+                if (!TextUtils.isEmpty(hc)) {
                     if (accountViewModel.getMemberByHC(hc) != null) {
                         //PatientAccount pa = new PatientAccount(name, dob, hc, schoolID);
                         //accountViewModel.insertPatient(pa);
                         accountViewModel.updateMemberDoctor(hc, docID);
                         Toast.makeText(AddPatientForm.this, "Patient added to your account", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(v.getContext(), home_doctor.class);
+                        i.putExtra("id", docID);
                         startActivity(i);
                         finish();
                     } else {
                         Toast.makeText(AddPatientForm.this, "Patient with that health card # does not exist!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(AddPatientForm.this, "All fields must be filled out!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPatientForm.this, "You must enter a health card number!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -23,6 +23,7 @@ public class home_personal extends AppCompatActivity {
 
         Intent i = getIntent();
         String email = i.getStringExtra("email"); // gets intent from Login, won't work coming from another page
+        Long id = i.getLongExtra("id", 0);
 
         Button btnProfile = findViewById(R.id.btnPHomeProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +66,7 @@ public class home_personal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), AddMemberForm.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -74,6 +76,7 @@ public class home_personal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), ViewMembersActivity.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -83,6 +86,8 @@ public class home_personal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), VaccineInfoActivity.class);
+                i.putExtra("accType", "personal");
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

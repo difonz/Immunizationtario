@@ -39,6 +39,11 @@ public class CalendarActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         long memberID = i.getLongExtra("memberID", 0);
+        String accType = i.getStringExtra("accType");
+        long accID = i.getLongExtra("accID",0);
+        long docID = i.getLongExtra("docID", 0);
+        long schoolID = i.getLongExtra("schoolID", 0);
+
         MemberAccount member = accountViewModel.getMemberById(memberID);
         TextView title = findViewById(R.id.txtCalendarTitle);
         title.setText("Vaccine Calendar for " + member.getName());
@@ -75,7 +80,7 @@ public class CalendarActivity extends AppCompatActivity {
 
             List<Event> eventList = new ArrayList<Event>(); // will hold all our created Events
             Calendar calendar = Calendar.getInstance();
-            calendar.setTime(dob);
+            calendar.setTime(dob); // set starting calendar date to member DOB
             calendar.add(calendar.MONTH, 1); // add 1 month to member DOB
             Date month1Date = calendar.getTime(); // Hep B vaccine 1 month after DOB
             Event birthday = new Event(Color.GREEN, dob.getTime(), member.getName() + "'s birthday");
@@ -88,7 +93,7 @@ public class CalendarActivity extends AppCompatActivity {
             Event HIB1Event = new Event(Color.RED, month2Date.getTime(), "Haemophilus influenzae type b First Dose");
             Event PCV1Event = new Event(Color.RED, month2Date.getTime(), "Pneumococcal conjugate First Dose");
             Event IPV1Event = new Event(Color.RED, month2Date.getTime(), "Inactivated poliovirus First Dose");
-            Event hepB2Event = new Event(Color.RED, month1Date.getTime(), "Hepatitis B Second Dose");
+            Event hepB2Event = new Event(Color.RED, month2Date.getTime(), "Hepatitis B Second Dose");
 
             eventList.add(birthday);
             eventList.add(hepB1Event);
@@ -108,8 +113,20 @@ public class CalendarActivity extends AppCompatActivity {
         btnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), home_personal.class);
-                startActivity(i);
+                Intent intent;
+                // send back to the appropriate View activity, since all 3 account types redirect to this one activity
+                if (accType.equals("school")) {
+                    intent = new Intent(v.getContext(), home_school.class);
+                    intent.putExtra("id", schoolID);
+                } else if (accType.equals("doctor")) {
+                    intent = new Intent(v.getContext(), home_doctor.class);
+                    intent.putExtra("id", docID);
+                } else { // accType.equals("personal")
+                    intent = new Intent(v.getContext(), home_personal.class);
+                    intent.putExtra("id", accID);
+                }
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -117,8 +134,15 @@ public class CalendarActivity extends AppCompatActivity {
         btnViewRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), ViewMembersActivity.class);
-                startActivity(i);
+                Intent intent;
+                intent = new Intent(v.getContext(), ViewStudentsActivity.class);
+                intent.putExtra("memberID", memberID);
+                intent.putExtra("accType", accType);
+                intent.putExtra("accID", accID);
+                intent.putExtra("docID", docID);
+                intent.putExtra("schoolID", schoolID);
+                startActivity(intent);
+                finish();
             }
         });
     }

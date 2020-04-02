@@ -31,6 +31,9 @@ public class VaccineRecordActivity extends AppCompatActivity {
         Intent i = getIntent();
         long memberID = i.getLongExtra("memberID", 0);
         String accType = i.getStringExtra("accType");
+        long accID = i.getLongExtra("accID",0);
+        long docID = i.getLongExtra("docID", 0);
+        long schoolID = i.getLongExtra("schoolID", 0);
         Log.d("accType", "" + accType); // personal, doctor, or school
 
         // set RecyclerView view and layout
@@ -62,7 +65,12 @@ public class VaccineRecordActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), CalendarActivity.class);
                 i.putExtra("memberID", memberID);
+                i.putExtra("accType", accType);
+                i.putExtra("accID", accID);
+                i.putExtra("docID", docID);
+                i.putExtra("schoolID", schoolID);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -74,10 +82,13 @@ public class VaccineRecordActivity extends AppCompatActivity {
                 // send back to the appropriate View activity, since all 3 account types redirect to this one activity
                 if (accType.equals("school")) {
                     intent = new Intent(v.getContext(), ViewStudentsActivity.class);
+                    intent.putExtra("id", schoolID);
                 } else if (accType.equals("doctor")) {
                     intent = new Intent(v.getContext(), ViewPatientsActivity.class);
+                    intent.putExtra("id", docID);
                 } else { // accType.equals("personal")
                     intent = new Intent(v.getContext(), ViewMembersActivity.class);
+                    intent.putExtra("id", accID);
                 }
                 startActivity(intent);
                 finish();

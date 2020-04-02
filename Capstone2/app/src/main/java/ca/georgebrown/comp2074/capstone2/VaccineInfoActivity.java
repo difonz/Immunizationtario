@@ -18,7 +18,10 @@ public class VaccineInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vaccine__info);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        String accType = sharedPref.getString("accType", "personal");
+        // String accType = sharedPref.getString("accType", "personal");
+        Intent i = getIntent();
+        String accType = i.getStringExtra("accType");
+        long id = i.getLongExtra("id", 0);
         Log.d("accType", accType);
 
         Button btnHome = findViewById(R.id.btnVaccineInfoHome);
@@ -33,7 +36,9 @@ public class VaccineInfoActivity extends AppCompatActivity {
                 } else {
                     intent = new Intent(v.getContext(), home_personal.class);
                 }
+                i.putExtra("id", id);
                 startActivity(intent);
+                finish();
             }
         });
 

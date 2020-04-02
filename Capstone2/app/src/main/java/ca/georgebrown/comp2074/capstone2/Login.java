@@ -58,6 +58,7 @@ public class Login extends AppCompatActivity {
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_personal.class);
                                 intent.putExtra("email", pa.getEmail());
+                                intent.putExtra("id", pa.getId());
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -78,6 +79,7 @@ public class Login extends AppCompatActivity {
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_doctor.class);
                                 intent.putExtra("email", da.getEmail());
+                                intent.putExtra("id", da.getId());
                                 startActivity(intent);
                                 finish();
                             } else {
@@ -98,6 +100,7 @@ public class Login extends AppCompatActivity {
                                 editor.apply();
                                 intent = new Intent(v.getContext(), home_school.class);
                                 intent.putExtra("email", sa.getEmail());
+                                intent.putExtra("id", sa.getId());
                                 startActivity(intent);
                                 finish();
                             } else {

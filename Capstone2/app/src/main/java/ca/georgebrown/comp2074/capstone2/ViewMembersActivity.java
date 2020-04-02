@@ -27,7 +27,9 @@ public class ViewMembersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_members);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long accID = sharedPref.getLong("id", 0);
+        // Long accID = sharedPref.getLong("id", 0);
+        Intent i = getIntent();
+        long accID = i.getLongExtra("id", 0);
 
         // set RecyclerView view and layout
         RecyclerView recyclerView = findViewById(R.id.PMembersRecyclerView);
@@ -53,6 +55,7 @@ public class ViewMembersActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_personal.class);
+                i.putExtra("id", accID);
                 startActivity(i);
                 finish();
             }

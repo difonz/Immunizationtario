@@ -81,8 +81,9 @@ public class home_school extends AppCompatActivity {
         btnViewStudents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(v.getContext(), PatientRecordsActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(v.getContext(), ViewStudentsActivity.class);
+                i.putExtra("id", id);
+                startActivity(i);
             }
         });
 

@@ -30,7 +30,7 @@ public class StudentListAdapter extends RecyclerView.Adapter<StudentListAdapter.
                         Toast.makeText(v.getContext(), "You selected " + currentStudent.getName(), Toast.LENGTH_SHORT).show();
                         // open the vaccine record page for the clicked student
                         Intent i = new Intent(v.getContext(), VaccineRecordActivity.class);
-                        i.putExtra("studentID", currentStudent.getId());
+                        i.putExtra("memberID", currentStudent.getId());
                         i.putExtra("schoolID", currentStudent.getSchoolID());
                         i.putExtra("accType", "school");
                         v.getContext().startActivity(i);

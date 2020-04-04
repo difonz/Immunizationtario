@@ -59,7 +59,7 @@ public class home_doctor extends AppCompatActivity {
         btnDocView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), View_doctor.class);
+                Intent i = new Intent(v.getContext(), ViewPatientsActivity.class);
                 i.putExtra("id", id);
                 startActivity(i);
             }

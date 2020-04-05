@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ public class AddStudentForm extends AppCompatActivity {
         // Long schoolID = sharedPref.getLong("id", 0);
         Intent i = getIntent();
         long schoolID = i.getLongExtra("id", 0);
+        Log.d("add student school id", "" + schoolID);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         final SchoolAccount sa = accountViewModel.getSchoolById(schoolID);

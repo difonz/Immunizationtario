@@ -22,8 +22,8 @@ public class home_personal extends AppCompatActivity {
         Log.d("accountEmail", sharedPref.getString("email", ""));
 
         Intent i = getIntent();
-        String email = i.getStringExtra("email"); // gets intent from Login, won't work coming from another page
-        Long id = i.getLongExtra("id", 0);
+        String email = i.getStringExtra("email"); // gets intent from Login
+        long id = i.getLongExtra("id", 0);
 
         Button btnProfile = findViewById(R.id.btnPHomeProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +68,7 @@ public class home_personal extends AppCompatActivity {
                 Intent i = new Intent(v.getContext(), AddMemberForm.class);
                 i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -78,6 +79,7 @@ public class home_personal extends AppCompatActivity {
                 Intent i = new Intent(v.getContext(), ViewMembersActivity.class);
                 i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -89,6 +91,7 @@ public class home_personal extends AppCompatActivity {
                 i.putExtra("accType", "personal");
                 i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
     }

@@ -63,9 +63,9 @@ public class SchoolProfileActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_school.class);
-                startActivity(i);
                 i.putExtra("email", email);
                 i.putExtra("id", id);
+                startActivity(i);
                 finish();
             }
         });

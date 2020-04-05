@@ -32,8 +32,9 @@ public class AddMemberForm extends AppCompatActivity {
         setContentView(R.layout.activity_add_member_form);
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        Long accID = sharedPref.getLong("id", 0);
-        Log.d("accID_add_member", accID.toString());
+        //Long accID = sharedPref.getLong("id", 0);
+        Intent i = getIntent();
+        long accID = i.getLongExtra("id", 0);
 
         accountViewModel = new ViewModelProvider(this).get(AccountViewModel.class);
         PersonalAccount pa = accountViewModel.getPersonalById(accID);
@@ -76,6 +77,7 @@ public class AddMemberForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_personal.class);
+                i.putExtra("id", accID);
                 startActivity(i);
                 finish();
             }
@@ -94,6 +96,7 @@ public class AddMemberForm extends AppCompatActivity {
                     accountViewModel.insertMember(ma);
                     Toast.makeText(AddMemberForm.this, "Family member added to your account", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(v.getContext(), home_personal.class);
+                    i.putExtra("id", accID);
                     startActivity(i);
                     finish();
                 } else {

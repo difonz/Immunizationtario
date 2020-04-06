@@ -41,6 +41,7 @@ public class home_school extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), SchoolProfileActivity.class);
                 i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

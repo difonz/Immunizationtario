@@ -31,6 +31,7 @@ public class home_personal extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), PersonalProfileActivity.class);
                 i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

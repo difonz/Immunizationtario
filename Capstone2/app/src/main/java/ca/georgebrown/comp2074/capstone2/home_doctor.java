@@ -43,6 +43,7 @@ public class home_doctor extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), DoctorProfileActivity.class);
                 i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

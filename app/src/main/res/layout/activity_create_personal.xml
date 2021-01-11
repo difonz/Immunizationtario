@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8F8E8">
+    android:background="@android:drawable/alert_light_frame">
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="416dp"
-        android:layout_height="73dp"
-        android:background="#F1E786"
+        android:id="@+id/editText13"
+        android:layout_width="403dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
         android:ems="10"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="@font/courgette"
         android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#056960"
         android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +32,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="20dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Full Name :"
@@ -46,8 +48,8 @@
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#C5E0C7"
+        android:layout_marginTop="25dp"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="OHIP Card No:"
@@ -66,7 +68,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="20dp"
-        android:background="#C5E0C7"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email: "
@@ -77,57 +79,13 @@
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
     <EditText
-        android:id="@+id/txt_createmail"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:ems="10"
-        android:hint="abc@email.com"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone" />
-
-    <EditText
-        android:id="@+id/txt_phone"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="123-123-1234"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_healthno" />
-
-    <TextView
-        android:id="@+id/txt_healthno"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:hint="111-111-111-1111-AA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dob" />
-
-    <EditText
-        android:id="@+id/txt_dob"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:hint="DOB"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fullname" />
-
-    <EditText
         android:id="@+id/editText4"
         android:layout_width="137dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#C5E0C7"
+        android:layout_marginTop="25dp"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Date of Birth: "
@@ -137,28 +95,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
-    <TextView
-        android:id="@+id/txt_createpass"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:inputType="textPassword"
-        android:password="true"
-        android:text="*****"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_createmail" />
-
     <EditText
         android:id="@+id/editText18"
         android:layout_width="137dp"
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#C5E0C7"
+        android:layout_marginTop="25dp"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="New Password: "
+        android:text="Password: "
         android:textColor="#02105F"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -171,8 +118,8 @@
         android:layout_height="41dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
-        android:background="#C5E0C7"
+        android:layout_marginTop="25dp"
+        android:background="#D5E7D6"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone: "
@@ -182,51 +129,123 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
-    <TextView
-        android:id="@+id/txt_fullname"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:hint="First - Last Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
-
     <EditText
         android:id="@+id/editText11"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="#096B0B"
+        android:layout_width="294dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
+        android:fontFamily="@font/aclonica"
         android:inputType="textPersonName"
-        android:text="          PERSONAL USER"
+        android:text="PERSONAL USER"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FFFFFF"
+        android:textColor="#131213"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.405"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText13" />
 
     <Button
         android:id="@+id/btnCreatePersonal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="Create Account"
+        android:textColor="#07550B"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnCancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_createpass" />
+        app:layout_constraintTop_toBottomOf="@+id/editText18" />
 
     <Button
         android:id="@+id/btnPersonalCancel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="@android:string/cancel"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="651dp" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCreatePersonal" />
+
+    <EditText
+        android:id="@+id/txtPersonalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText3"
+        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+
+    <EditText
+        android:id="@+id/txtPersonDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="dd/mm/yyyy"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/txtPersonalName" />
+
+    <EditText
+        android:id="@+id/txtPersonHealthCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="OHIP #"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/txtPersonDOB" />
+
+    <EditText
+        android:id="@+id/txtPersonPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/txtPersonHealthCard" />
+
+    <EditText
+        android:id="@+id/txtPersonEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText8"
+        app:layout_constraintTop_toBottomOf="@+id/txtPersonPhone" />
+
+    <EditText
+        android:id="@+id/txtPersonPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editText18"
+        app:layout_constraintTop_toBottomOf="@+id/txtPersonEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

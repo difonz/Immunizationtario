@@ -1,0 +1,83 @@
+[33mcommit 1938e7dcf2cf79a00302305f36935b0c4dc137e4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31mreal/master[m[33m)[m
+Author: Tommy <tcarlberg37@gmail.com>
+Date:   Sun Mar 15 01:01:20 2020 -0400
+
+    added onClickListener to recycler view and add vaccine activity
+
+[33mcommit 273a73745de9d9ee454ba81457cb8f74a1207e9a[m
+Author: Tommy <tcarlberg37@gmail.com>
+Date:   Sun Mar 1 23:30:51 2020 -0500
+
+    added recyclerview, fixed login
+
+[33mcommit 6d678c831cc1bc402b7cafbdc28dcc1efcf11fe4[m
+Author: Tommy <tcarlberg37@gmail.com>
+Date:   Fri Feb 14 17:55:10 2020 -0500
+
+    added add member/patient/student entities and functionality
+
+[33mcommit fed199803b0440817119cd68143f493994bc994a[m
+Author: Tommy <tcarlberg37@gmail.com>
+Date:   Sat Feb 8 15:54:09 2020 -0500
+
+    added login and profile functionality
+
+[33mcommit 68ecbb6675ea8ec0bca9d579c461d3d24c8ef138[m
+Author: Tommy <tcarlberg37@gmail.com>
+Date:   Tue Feb 4 16:10:58 2020 -0500
+
+    added account creation functionality
+
+[33mcommit 0e89f4beffb984f4af4a0f993aecd0ee51c87ec1[m
+Author: Tommy <tcarlberg37@gmail.com>
+Date:   Tue Feb 4 11:37:37 2020 -0500
+
+    added database
+
+[33mcommit 84103e54668f3aeb69be009d7e180e45ccfc7944[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Tue Jan 21 17:12:18 2020 -0500
+
+    Adding  final layouts file
+
+[33mcommit 0d093d73b629afc635b85814241217fd04b9c0a2[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Sun Jan 19 16:43:49 2020 -0500
+
+    Updated Layout folder
+
+[33mcommit 6a4b8ca145c0ff480650e3e8a5e4bb4ccc84c088[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Sun Jan 19 16:41:57 2020 -0500
+
+    adding map pic
+
+[33mcommit 15a3335b390c686e40e100eefd32bae7d211e749[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Sat Jan 18 13:47:50 2020 -0500
+
+    Completed all Layouts
+
+[33mcommit b2ecabb00b2033ebcfdff027f602b7d04c199b4f[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Sat Jan 18 13:46:06 2020 -0500
+
+    adding all the pictures
+
+[33mcommit 6ef0bc1b15225d01fcdb8ab8b140db96c2d0856c[m
+Author: Sahara Panna <sahara.panna@gmail.com>
+Date:   Thu Jan 16 21:13:38 2020 -0500
+
+    Immunizationtario
+
+[33mcommit 833927e2577935474b60a77ec3a64aa9c0f33045[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Thu Jan 16 21:07:05 2020 -0500
+
+    Update README.md
+
+[33mcommit 266f54018e749585ae8e0ac7986915111feb181f[m
+Author: saharapanna <43882742+saharapanna@users.noreply.github.com>
+Date:   Thu Jan 16 21:06:29 2020 -0500
+
+    Initial commit

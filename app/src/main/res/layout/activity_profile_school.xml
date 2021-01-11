@@ -4,8 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6F5F7"
-    tools:context=".Profile_school">
+    android:background="@android:drawable/alert_light_frame"
+    tools:context=".SchoolProfileActivity">
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="409dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#3F51B5"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtSProfileTitle"
+        android:layout_width="372dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/panelBackground"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:inputType="textPersonName"
+        android:text="   My Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#0F1E70"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <Button
         android:id="@+id/btnSProfileHome"
@@ -15,9 +51,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="25dp"
-        android:layout_marginBottom="48dp"
-        android:background="#3F51B5"
+        android:layout_marginBottom="35dp"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="Back to Home"
+        android:textColor="#081557"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,34 +65,17 @@
         app:layout_constraintTop_toBottomOf="@+id/editText8"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="416dp"
-        android:layout_height="73dp"
-        android:background="#F1E786"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
-        android:id="@+id/txt_fullname"
+        android:id="@+id/txtSProfileName"
         android:layout_width="212dp"
         android:layout_height="41dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:hint="First - Last Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button34" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSProfileUpload" />
 
     <EditText
         android:id="@+id/editText7"
@@ -63,7 +84,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone: "
@@ -80,10 +101,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Employee ID:"
+        android:text="Address:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#02105F"
         android:textSize="20sp"
@@ -98,8 +119,8 @@
         android:layout_height="41dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:background="#91C6F1"
+        android:layout_marginTop="30dp"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Full Name :"
@@ -107,18 +128,17 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button34" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSProfileUpload" />
 
     <TextView
-        android:id="@+id/txt_healthno"
+        android:id="@+id/txtSProfileAddress"
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:hint="111-111-111"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dob" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSProfileSchoolName" />
 
     <EditText
         android:id="@+id/editText8"
@@ -127,7 +147,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email: "
@@ -144,7 +164,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#91C6F1"
+        android:background="#D4E5F1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="School Name: "
@@ -155,7 +175,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <EditText
-        android:id="@+id/txt_phone"
+        android:id="@+id/txtSProfilePhone"
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginTop="15dp"
@@ -165,10 +185,10 @@
         android:hint="123-123-1234"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_healthno" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSProfileAddress" />
 
     <EditText
-        android:id="@+id/txt_dob"
+        android:id="@+id/txtSProfileSchoolName"
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginTop="15dp"
@@ -177,10 +197,10 @@
         android:ems="10"
         android:hint="Name of the school"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fullname" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSProfileName" />
 
     <EditText
-        android:id="@+id/txt_createmail"
+        android:id="@+id/txtSProfileEmail"
         android:layout_width="212dp"
         android:layout_height="41dp"
         android:layout_marginTop="15dp"
@@ -190,33 +210,26 @@
         android:hint="abc@email.com"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSProfilePhone" />
 
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="414dp"
-        android:layout_height="57dp"
-        android:background="#03178B"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="   My Profile, "
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button34"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/btnSProfileUpload"
+        android:layout_width="260dp"
+        android:layout_height="165dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/alert_light_frame"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSProfileTitle" />
 
     <Button
-        android:id="@+id/button34"
-        android:layout_width="414dp"
-        android:layout_height="165dp"
-        android:background="#DD4E80"
-        android:text="Upload Your Photo here"
+        android:id="@+id/btn_uploadSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:text="Upload Image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toEndOf="@+id/btnSProfileUpload"
+        app:layout_constraintTop_toBottomOf="@+id/txtSProfileTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

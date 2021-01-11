@@ -26,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DoctorUpdateActivity" />
         <activity android:name=".VaccineInfoActivity" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".DoctorProfileActivity" />
@@ -36,7 +35,11 @@
         <activity android:name=".AddMemberForm" />
         <activity android:name=".AddPatientForm" />
         <activity android:name=".AddStudentForm" />
-        <activity android:name=".ViewRecordActivity" />
+        <activity android:name=".AddVaccineActivity" />
+        <activity android:name=".ViewMembersActivity" />
+        <activity android:name=".ViewPatientsActivity" />
+        <activity android:name=".ViewStudentsActivity" />
+        <activity android:name=".VaccineRecordActivity" />
     </application>
 
 </manifest>

@@ -4,66 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7E583"
-    tools:context=".Vaccine_Info">
+    android:background="#F8EEAA"
+    tools:context=".VaccineInfoActivity">
+
+    <EditText
+        android:id="@+id/editText20"
+        android:layout_width="416dp"
+        android:layout_height="73dp"
+        android:background="#F7D165"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="    ImmunizatiOntario"
+        android:textColor="#0F5049"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtLoginEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnPHome"
+        android:id="@+id/btnVaccineInfoHome"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="@android:color/holo_red_dark"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="Back Home"
-        android:textColor="#F8F6F6"
+        android:textColor="#330606"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editText20"
-        android:layout_width="407dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="28dp"
-        android:background="#E6F8D1"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txt_username"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
-
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="414dp"
-        android:layout_height="558dp"
+        android:layout_width="401dp"
+        android:layout_height="354dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/button42"
-                android:layout_width="202dp"
-                android:layout_height="match_parent"
-                android:text="Vaccine Info" />
-
-            <Button
-                android:id="@+id/button41"
-                android:layout_width="212dp"
-                android:layout_height="wrap_content"
-                android:text="Travel Vaccine Info" />
-        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
@@ -77,4 +61,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </TableLayout>
+
+    <Button
+        android:id="@+id/btnVaccineInfoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:text="Link to Vaccine Information"
+        android:textColor="#2C0505"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnTravelVaccineInfoLink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText20" />
+
+    <Button
+        android:id="@+id/btnTravelVaccineInfoLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:text="Link to Travel Vaccine Information"
+        android:textColor="#2C0505"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ public class MemberAccount {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
-    private int id;
+    private long id;
 
     @NonNull
     @ColumnInfo(name = "name")
@@ -28,17 +28,25 @@ public class MemberAccount {
     // CASCADE == if member's parent account is deleted, so is the member
     @ForeignKey(entity = PersonalAccount.class, parentColumns = "id", childColumns = "accountID", onDelete = ForeignKey.CASCADE)
     @ColumnInfo(name = "accountID")
-    private int accountID;
+    private long accountID;
+
+    @ColumnInfo(name = "doctorID")
+    private long doctorID;
+
+    @ColumnInfo(name = "schoolID")
+    private long schoolID;
 
 
-    public MemberAccount(String n, String d, String hc, int acc) {
-        name = n;
-        dob = d;
-        healthCard = hc;
-        accountID = acc;
+    public MemberAccount(String name, String dob, String healthCard, long accountID) {
+        this.name = name;
+        this.dob = dob;
+        this.healthCard = healthCard;
+        this.accountID = accountID;
+        this.doctorID = 0;
+        this.schoolID = 0;
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -55,7 +63,13 @@ public class MemberAccount {
         return this.dob;
     }
 
-    public int getAccountID() { return this.accountID; }
+    public long getAccountID() { return this.accountID; }
+
+    public long getDoctorID() { return this.doctorID; }
+
+    public long getSchoolID() { return this.schoolID; }
+
+    public void setId(long newID) { this.id = newID; }
 
     public void setName(String newName) {
         this.name = newName;
@@ -68,5 +82,11 @@ public class MemberAccount {
     public void setDob(String newDob) {
         this.dob = newDob;
     }
+
+    public void setAccountID(long newAccId) { this.accountID = newAccId; }
+
+    public void setDoctorID(long newDocId) { this.doctorID = newDocId; }
+
+    public void setSchoolID(long newSchoolId) { this.schoolID = newSchoolId; }
 
 }

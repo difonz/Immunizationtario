@@ -11,11 +11,14 @@ public class SchoolAccount {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name="id")
-    private int id;
+    private long id;
 
     @NonNull
     @ColumnInfo(name="name")
     private String name;
+
+    @ColumnInfo(name="schoolName")
+    private String schoolName;
 
     @ColumnInfo(name="address")
     private String address;
@@ -23,20 +26,33 @@ public class SchoolAccount {
     @ColumnInfo(name="phone")
     private String phone;
 
+    @ColumnInfo(name="email")
+    private String email;
 
-    public SchoolAccount(String n, String a, String p) {
-        name = n;
-        address = a;
-        phone = p;
+    @ColumnInfo(name="password")
+    private String password;
+
+
+    public SchoolAccount(String name, String schoolName, String address, String phone, String email, String password) {
+        this.name = name;
+        this.schoolName = schoolName;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.password = password;
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
     @NonNull
     public String getName() {
         return this.name;
+    }
+
+    public String getSchoolName() {
+        return this.schoolName;
     }
 
     public String getAddress() {
@@ -47,8 +63,30 @@ public class SchoolAccount {
         return this.phone;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String newPass) {
+        this.password = newPass;
+    }
+
+    public void setId(long newID) { this.id = newID; }
+
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
+    }
+
     public void setName(String newName) {
         this.name = newName;
+    }
+
+    public void setSchoolName(String newName) {
+        this.schoolName = newName;
     }
 
     public void setAddress(String newAddress) {

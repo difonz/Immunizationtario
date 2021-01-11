@@ -4,17 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDFCEE"
+    android:background="@android:drawable/alert_light_frame"
     tools:context=".home_personal">
+
+    <EditText
+        android:id="@+id/editText35"
+        android:layout_width="402dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#056960"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnPHomeAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="#27B32C"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="sans-serif-medium"
         android:text="Add New Member"
-        android:textColor="#FAF7F7"
+        android:textColor="#127E16"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnPHomeRecords"
@@ -27,141 +47,108 @@
         android:id="@+id/btnPHomeRecords"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:background="#27B32C"
-        android:text="Family Member's Record"
-        android:textColor="#FAF7F7"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="sans-serif-medium"
+        android:text="View Family Members"
+        android:textColor="#127E16"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnPHomeInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPHomeAdd" />
 
     <Button
         android:id="@+id/btnPHomeInfo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="42dp"
-        android:background="#27B32C"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="sans-serif-medium"
         android:text="Vaccines' Information"
-        android:textColor="#FAF7F7"
+        android:textColor="#127E16"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPHomeRecords" />
 
     <Button
         android:id="@+id/btnPHomeProfile"
         android:layout_width="81dp"
         android:layout_height="72dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:background="#158B18"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="@font/allan"
         android:text="Profile"
-        android:textColor="#FAF6F6"
+        android:textColor="#0A740F"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnPHomeMap"
         app:layout_constraintStart_toEndOf="@+id/btnPHome"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
-
-    <EditText
-        android:id="@+id/editText15"
-        android:layout_width="416dp"
-        android:layout_height="73dp"
-        android:background="#F1E786"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="362dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:background="#A0E2A3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPHomeProfile" />
+        app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
     <Button
         android:id="@+id/btnPHome"
         android:layout_width="81dp"
         android:layout_height="72dp"
-        android:background="#158B18"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="@font/allan"
         android:text="Home"
-        android:textColor="#FAF6F6"
+        android:textColor="#0A740F"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnPHomeProfile"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
-
-    <Button
-        android:id="@+id/btnPHomeCalendar"
-        android:layout_width="81dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:background="#158B18"
-        android:text="Calendar"
-        android:textColor="#FAF6F6"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/btnPHomeMap"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+        app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
     <Button
         android:id="@+id/btnPHomeMap"
         android:layout_width="81dp"
         android:layout_height="72dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:background="#158B18"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="@font/allan"
         android:text="Map"
-        android:textColor="#FAF6F6"
+        android:textColor="#0A740F"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnPHomeLogout"
         app:layout_constraintStart_toEndOf="@+id/btnPHomeProfile"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+        app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
     <Button
         android:id="@+id/btnPHomeLogout"
         android:layout_width="81dp"
         android:layout_height="72dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:background="#158B18"
+        android:layout_marginTop="4dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="@font/allan"
         android:text="Logout"
-        android:textColor="#FAF6F6"
+        android:textColor="#0A740F"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/btnPHomeCalendar"
-        app:layout_constraintTop_toBottomOf="@+id/editText15" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnPHomeMap"
+        app:layout_constraintTop_toBottomOf="@+id/editText35" />
 
     <Button
         android:id="@+id/button17"
         android:layout_width="278dp"
         android:layout_height="221dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginRight="67dp"
+        android:layout_marginBottom="45dp"
         android:background="@drawable/personal_h"
         app:layout_constraintBottom_toTopOf="@+id/btnPHomeAdd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPHomeProfile" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

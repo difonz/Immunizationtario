@@ -17,6 +17,13 @@ public class AccountViewModel extends AndroidViewModel {
     private LiveData<List<MemberAccount>> allMembers;
     private LiveData<List<Immunization>> allImmunizations;
 
+    private PersonalAccount personalAccountLiveData;
+    private DoctorAccount doctorAccountLiveData;
+    private SchoolAccount schoolAccountLiveData;
+    private MemberAccount memberAccountLiveData;
+    private PatientAccount patientAccountLiveData;
+    private StudentAccount studentAccountLiveData;
+
     public AccountViewModel (Application application) {
         super(application);
         mRepository = new AccountRepository(application);
@@ -49,24 +56,76 @@ public class AccountViewModel extends AndroidViewModel {
         return allImmunizations;
     }
 
-    LiveData<List<MemberAccount>> getMembers(int id) {
-        return mRepository.getMembers(id);
+    LiveData<List<MemberAccount>> getMembersByAccID(long id) {
+        return mRepository.getMembersByAccID(id);
     }
 
-    LiveData<List<Immunization_User>> getUserImmunizations(int userID) {
+    LiveData<List<MemberAccount>> getMembersByDocID(long id) {
+        return mRepository.getMembersByDocID(id);
+    }
+
+    LiveData<List<MemberAccount>> getMembersBySchoolID(long id) {
+        return mRepository.getMembersBySchoolID(id);
+    }
+
+    LiveData<List<Immunization_User>> getUserImmunizations(long userID) {
         return mRepository.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalUser(int id) {
-        return mRepository.getPersonalUser(id);
+    PersonalAccount getPersonalById(long id) {
+        if (personalAccountLiveData == null) {
+            personalAccountLiveData = mRepository.getPersonalById(id);
+        }
+        return personalAccountLiveData;
     }
 
-    LiveData<DoctorAccount> getDoctorUser(int id) {
-        return mRepository.getDoctorUser(id);
+    DoctorAccount getDoctorById(long id) {
+        if (doctorAccountLiveData == null) {
+            doctorAccountLiveData = mRepository.getDoctorById(id);
+        }
+        return doctorAccountLiveData;
     }
 
-    LiveData<SchoolAccount> getSchoolUser(int id) {
-        return mRepository.getSchoolUser(id);
+    SchoolAccount getSchoolById(long id) {
+        if (schoolAccountLiveData == null) {
+            schoolAccountLiveData = mRepository.getSchoolById(id);
+        }
+        return schoolAccountLiveData;
+    }
+
+    MemberAccount getMemberById(long id) {
+        if (memberAccountLiveData == null) {
+            memberAccountLiveData = mRepository.getMemberById(id);
+        }
+        return memberAccountLiveData;
+    }
+
+    MemberAccount getMemberByHC(String healthCard) {
+        if (memberAccountLiveData == null) {
+            memberAccountLiveData = mRepository.getMemberByHC(healthCard);
+        }
+        return memberAccountLiveData;
+    }
+
+    PersonalAccount getPersonalByEmail(String email) {
+        if (personalAccountLiveData == null) {
+            personalAccountLiveData = mRepository.getPersonalByEmail(email);
+        }
+        return personalAccountLiveData;
+    }
+
+    DoctorAccount getDoctorByEmail(String email) {
+        if (doctorAccountLiveData == null) {
+            doctorAccountLiveData = mRepository.getDoctorByEmail(email);
+        }
+        return doctorAccountLiveData;
+    }
+
+    SchoolAccount getSchoolByEmail(String email) {
+        if (schoolAccountLiveData == null) {
+            schoolAccountLiveData = mRepository.getSchoolByEmail(email);
+        }
+        return schoolAccountLiveData;
     }
 
     // INSERTS
@@ -101,5 +160,13 @@ public class AccountViewModel extends AndroidViewModel {
 
     void updatePersonalSchool(int id, int schoolID) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.updatePersonalSchool(id, schoolID); });
+    }
+
+    void updateMemberDoctor(String healthCard, long doctorID) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.updateMemberDoctor(healthCard, doctorID); });
+    }
+
+    void updateMemberSchool(String healthCard, long schoolID) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { mRepository.updateMemberSchool(healthCard, schoolID); });
     }
 }

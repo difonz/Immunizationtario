@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/alert_light_frame"
+    tools:context=".VaccineRecordActivity">
+
+
+    <Button
+        android:id="@+id/btnVRecordBack"
+        android:layout_width="383dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="serif"
+        android:text="Back To List"
+        android:textColor="#125535"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVRecordCalendar" />
+
+    <EditText
+        android:id="@+id/editText40"
+        android:layout_width="402dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#056960"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/VRecordRecyclerView"
+        android:layout_width="351dp"
+        android:layout_height="444dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVRecordCalendar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VRecordTitle"
+        tools:listitem="@layout/recyclerview_item" />
+
+    <Button
+        android:id="@+id/btnVRecordCalendar"
+        android:layout_width="383dp"
+        android:layout_height="68dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:fontFamily="serif"
+        android:text="View Member's Calendar"
+        android:textColor="#125535"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btnVRecordBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/VRecordRecyclerView" />
+
+    <TextView
+        android:id="@+id/VRecordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Vaccine Record"
+        android:textColor="#131212"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText40" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

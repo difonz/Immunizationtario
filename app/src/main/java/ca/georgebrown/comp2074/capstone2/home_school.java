@@ -18,6 +18,10 @@ public class home_school extends AppCompatActivity {
 
         final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
+        Intent i = getIntent();
+        String email = i.getStringExtra("email");
+        Long id = i.getLongExtra("id", 0);
+
         Button btnHome = findViewById(R.id.btnSHome);
         Button btnProfile = findViewById(R.id.btnSHomeProfile);
         Button btnView = findViewById(R.id.btnSHomeRecords);
@@ -27,6 +31,7 @@ public class home_school extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_school.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -35,6 +40,8 @@ public class home_school extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), SchoolProfileActivity.class);
+                i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -42,8 +49,9 @@ public class home_school extends AppCompatActivity {
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(v.getContext(), .class);
-                //startActivity(i);
+                Intent i = new Intent(v.getContext(), ViewStudentsActivity.class);
+                i.putExtra("id", id);
+                startActivity(i);
             }
         });
 
@@ -65,6 +73,7 @@ public class home_school extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), AddStudentForm.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -73,8 +82,9 @@ public class home_school extends AppCompatActivity {
         btnViewStudents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(v.getContext(), PatientRecordsActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(v.getContext(), ViewStudentsActivity.class);
+                i.putExtra("id", id);
+                startActivity(i);
             }
         });
 
@@ -83,6 +93,8 @@ public class home_school extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), VaccineInfoActivity.class);
+                i.putExtra("accType", "school");
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });

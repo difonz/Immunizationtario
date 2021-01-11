@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,12 +19,19 @@ public class home_personal extends AppCompatActivity {
         setContentView(R.layout.activity_home_personal);
 
         final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        Log.d("accountEmail", sharedPref.getString("email", ""));
+
+        Intent i = getIntent();
+        String email = i.getStringExtra("email"); // gets intent from Login
+        long id = i.getLongExtra("id", 0);
 
         Button btnProfile = findViewById(R.id.btnPHomeProfile);
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), PersonalProfileActivity.class);
+                i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -37,15 +45,6 @@ public class home_personal extends AppCompatActivity {
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, mapsIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
-            }
-        });
-
-        Button btnCalendar = findViewById(R.id.btnPHomeCalendar);
-        btnCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), CalendarActivity.class);
-                startActivity(i);
             }
         });
 
@@ -68,7 +67,9 @@ public class home_personal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), AddMemberForm.class);
+                i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -76,8 +77,10 @@ public class home_personal extends AppCompatActivity {
         btnFamilyRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), ViewRecordActivity.class);
+                Intent i = new Intent(v.getContext(), ViewMembersActivity.class);
+                i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -86,7 +89,10 @@ public class home_personal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), VaccineInfoActivity.class);
+                i.putExtra("accType", "personal");
+                i.putExtra("id", id);
                 startActivity(i);
+                finish();
             }
         });
     }

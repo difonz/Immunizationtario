@@ -4,18 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1ECFA"
-    tools:context=".Profile_doctor">
+    android:background="@android:drawable/alert_light_frame"
+    tools:context=".DoctorProfileActivity">
+
+    <EditText
+        android:id="@+id/editText37"
+        android:layout_width="390dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="32dp"
+        android:background="#F8F3C4"
+        android:ems="10"
+        android:fontFamily="@font/courgette"
+        android:inputType="textPersonName"
+        android:text="   ImmunizatiOntario"
+        android:textColor="#7C0D8F"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDProfileName"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="First - Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDProfileUpload" />
+
+    <EditText
+        android:id="@+id/txtDProfilePracID"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="PractitianID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfileName" />
+
+    <EditText
+        android:id="@+id/txtDProfilePhone"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="123-123-1234"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfileAddress" />
+
+    <TextView
+        android:id="@+id/txtDProfileAddress"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfilePracID" />
+
+    <EditText
+        android:id="@+id/txtDProfileEmail"
+        android:layout_width="212dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:hint="abc@email.com"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfilePhone" />
 
     <Button
         android:id="@+id/btnDProfileHome"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="48dp"
-        android:background="#A243B3"
+        android:layout_width="184dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="25dp"
+        android:background="@android:drawable/btn_default"
+        android:fontFamily="serif"
         android:text="Back Home"
+        android:textColor="#6C147A"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,34 +104,6 @@
         app:layout_constraintTop_toBottomOf="@+id/editText8"
         app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="416dp"
-        android:layout_height="73dp"
-        android:background="#F1E786"
-        android:ems="10"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textPersonName"
-        android:text="  IMMUNIZATIONTARIO"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/txt_fullname"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="First - Last Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button34" />
 
     <EditText
         android:id="@+id/editText7"
@@ -60,7 +112,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#E6DBFA"
+        android:background="#F2E2F5"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone: "
@@ -77,10 +129,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#E6DBFA"
+        android:background="#F2E2F5"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Practition ID:"
+        android:text="Address:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#02105F"
         android:textSize="20sp"
@@ -95,8 +147,8 @@
         android:layout_height="41dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:background="#E6DBFA"
+        android:layout_marginTop="40dp"
+        android:background="#F2E2F5"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Full Name :"
@@ -104,18 +156,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button34" />
-
-    <TextView
-        android:id="@+id/txt_healthno"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:hint="111-111-111"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_dob" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDProfileUpload" />
 
     <EditText
         android:id="@+id/editText8"
@@ -124,7 +165,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#E6DBFA"
+        android:background="#F2E2F5"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Email: "
@@ -141,10 +182,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:background="#E6DBFA"
+        android:background="#F2E2F5"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Clinic Name: "
+        android:text="Practition ID:"
         android:textColor="#02105F"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -152,68 +193,40 @@
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <EditText
-        android:id="@+id/txt_phone"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="123-123-1234"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_healthno" />
-
-    <EditText
-        android:id="@+id/txt_dob"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="Name of the clinic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_fullname" />
-
-    <EditText
-        android:id="@+id/txt_createmail"
-        android:layout_width="212dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="abc@email.com"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone" />
-
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="414dp"
+        android:id="@+id/txtDProfileTitle"
+        android:layout_width="366dp"
         android:layout_height="57dp"
-        android:background="#79048D"
+        android:layout_marginTop="8dp"
+        android:background="?attr/panelBackground"
         android:ems="10"
+        android:fontFamily="casual"
         android:inputType="textPersonName"
-        android:text="   My Profile, "
+        android:text="   My Profile"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FFFFFF"
+        android:textColor="#4C0658"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button34"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText37" />
+
+    <ImageView
+        android:id="@+id/btnDProfileUpload"
+        android:layout_width="260dp"
+        android:layout_height="165dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:text="Upload Your Photo here"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfileTitle" />
 
     <Button
-        android:id="@+id/button34"
-        android:layout_width="414dp"
-        android:layout_height="165dp"
-        android:background="#DD4E80"
-        android:text="Upload Your Photo here"
+        android:id="@+id/btn_uploadDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:text="Upload Image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
+        app:layout_constraintStart_toEndOf="@+id/btnDProfileUpload"
+        app:layout_constraintTop_toBottomOf="@+id/txtDProfileTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

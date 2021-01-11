@@ -51,24 +51,52 @@ public class AccountRepository {
         return allImmunizations;
     }
 
-    LiveData<List<MemberAccount>> getMembers(int id) {
-        return accountDAO.getMembers(id);
+    LiveData<List<MemberAccount>> getMembersByAccID(long id) {
+        return accountDAO.getMembersByAccID(id);
     }
 
-    LiveData<List<Immunization_User>> getUserImmunizations(int userID) {
+    LiveData<List<MemberAccount>> getMembersByDocID(long id) {
+        return accountDAO.getMembersByDocID(id);
+    }
+
+    LiveData<List<MemberAccount>> getMembersBySchoolID(long id) {
+        return accountDAO.getMembersBySchoolID(id);
+    }
+
+    LiveData<List<Immunization_User>> getUserImmunizations(long userID) {
         return accountDAO.getUserImmunizations(userID);
     }
 
-    LiveData<PersonalAccount> getPersonalUser(int id) {
-        return accountDAO.getPersonalUser(id);
+    PersonalAccount getPersonalById(long id) {
+        return accountDAO.getPersonalById(id);
     }
 
-    LiveData<DoctorAccount> getDoctorUser(int id) {
-        return accountDAO.getDoctorUser(id);
+    DoctorAccount getDoctorById(long id) {
+        return accountDAO.getDoctorById(id);
     }
 
-    LiveData<SchoolAccount> getSchoolUser(int id) {
-        return accountDAO.getSchoolUser(id);
+    SchoolAccount getSchoolById(long id) {
+        return accountDAO.getSchoolById(id);
+    }
+
+    MemberAccount getMemberById(long id) {
+        return accountDAO.getMemberById(id);
+    }
+
+    MemberAccount getMemberByHC(String healthCard) {
+        return accountDAO.getMemberByHC(healthCard);
+    }
+
+    PersonalAccount getPersonalByEmail(String email) {
+        return accountDAO.getPersonalByEmail(email);
+    }
+
+    DoctorAccount getDoctorByEmail(String email) {
+        return accountDAO.getDoctorByEmail(email);
+    }
+
+    SchoolAccount getSchoolByEmail(String email) {
+        return accountDAO.getSchoolByEmail(email);
     }
 
 
@@ -99,11 +127,19 @@ public class AccountRepository {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.insertImmunizationUser(iu); });
     }
 
-    void updatePersonalDoctor(int id, int doctorID) {
+    void updatePersonalDoctor(int id, long doctorID) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.updatePersonalDoctor(id, doctorID); });
     }
 
-    void updatePersonalSchool(int id, int schoolID) {
+    void updatePersonalSchool(int id, long schoolID) {
         AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.updatePersonalSchool(id, schoolID); });
+    }
+
+    void updateMemberDoctor(String hc, long doctorID) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.updateMemberDoctor(hc, doctorID); });
+    }
+
+    void updateMemberSchool(String hc, long schoolID) {
+        AccountRoomDatabase.databaseWriteExecutor.execute(() -> { accountDAO.updateMemberSchool(hc, schoolID); });
     }
 }

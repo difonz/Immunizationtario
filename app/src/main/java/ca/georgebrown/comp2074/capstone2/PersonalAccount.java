@@ -12,14 +12,17 @@ public class PersonalAccount {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name="id")
-    private int id;
+    private long id;
 
     @NonNull
     @ColumnInfo(name="name")
     private String name;
 
-    @ColumnInfo(name="address")
-    private String address;
+    @ColumnInfo(name="email")
+    private String email;
+
+    @ColumnInfo(name="password")
+    private String password;
 
     @ColumnInfo(name="phone")
     private String phone;
@@ -40,17 +43,18 @@ public class PersonalAccount {
     private int schoolID;
 
 
-    public PersonalAccount(String n, String a, String p, String d, String hc) {
-        name = n;
-        address = a;
-        phone = p;
-        dob = d;
-        healthCard = hc;
-        doctorID = 0; // account starts unassociated with any doctor/school
-        schoolID = 0; // the doctor/school is the entity that must initiate the foreign key association
+    public PersonalAccount(String name, String email, String password, String phone, String dob, String healthCard) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.dob = dob;
+        this.healthCard = healthCard;
+        this.doctorID = 0; // account starts unassociated with any doctor/school
+        this.schoolID = 0; // the doctor/school is the entity that must initiate the foreign key association
     }
 
-    public int getId() {
+    public long getId() {
         return this.id;
     }
 
@@ -59,8 +63,8 @@ public class PersonalAccount {
         return this.name;
     }
 
-    public String getAddress() {
-        return this.address;
+    public String getEmail() {
+        return this.email;
     }
 
     public String getPhone() {
@@ -83,12 +87,18 @@ public class PersonalAccount {
         return this.schoolID;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setId(long newID) { this.id = newID; }
+
     public void setName(String newName) {
         this.name = newName;
     }
 
-    public void setAddress(String newAddress) {
-        this.address = newAddress;
+    public void setEmail(String newEmail) {
+        this.email = newEmail;
     }
 
     public void setPhone(String newPhone) {
@@ -109,5 +119,9 @@ public class PersonalAccount {
 
     public void setSchoolID(int sID) {
         this.schoolID = sID;
+    }
+
+    public void setPassword(String newPass) {
+        this.password = newPass;
     }
 }

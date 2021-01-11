@@ -18,6 +18,10 @@ public class home_doctor extends AppCompatActivity {
 
         final SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
 
+        Intent i = getIntent();
+        String email = i.getStringExtra("email");
+        Long id = i.getLongExtra("id", 0);
+
         // Navigation bar buttons
         Button btnDocHome = findViewById(R.id.btnDocHome);
         Button btnDocProfile = findViewById(R.id.btnDocProfile);
@@ -29,6 +33,7 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), home_doctor.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -37,6 +42,8 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), DoctorProfileActivity.class);
+                i.putExtra("email", email);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -44,7 +51,8 @@ public class home_doctor extends AppCompatActivity {
         btnDocUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), DoctorUpdateActivity.class);
+                Intent i = new Intent(v.getContext(), AddVaccineActivity.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -52,7 +60,8 @@ public class home_doctor extends AppCompatActivity {
         btnDocView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(v.getContext(), View_doctor.class);
+                Intent i = new Intent(v.getContext(), ViewPatientsActivity.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
@@ -75,16 +84,18 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), AddPatientForm.class);
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
 
-        Button btnPatientRecords = findViewById(R.id.btnDHomeRecords);
+        Button btnPatientRecords = findViewById(R.id.btnDHomeViewPatients);
         btnPatientRecords.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(v.getContext(), PatientRecordsActivity.class);
-                //startActivity(i);
+                Intent i = new Intent(v.getContext(), ViewPatientsActivity.class);
+                i.putExtra("id", id);
+                startActivity(i);
             }
         });
 
@@ -93,6 +104,8 @@ public class home_doctor extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(v.getContext(), VaccineInfoActivity.class);
+                i.putExtra("accType", "doctor");
+                i.putExtra("id", id);
                 startActivity(i);
             }
         });
